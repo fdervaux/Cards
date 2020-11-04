@@ -1,28 +1,28 @@
 # Initiation à la programation <!-- omit in toc -->
 
-- [I) Objectif du cours](#i-objectif-du-cours)
-- [II Expressions](#ii-expressions)
-  - [II-1) Expressions numériques](#ii-1-expressions-numériques)
-    - [II-1-a) les entiers](#ii-1-a-les-entiers)
-    - [II-1-b) les flottants](#ii-1-b-les-flottants)
-  - [II-2) Expressions booléennes](#ii-2-expressions-booléennes)
-    - [II-2-a) L'operateur ou](#ii-2-a-loperateur-ou)
-    - [II-2-b) L'operateur et](#ii-2-b-loperateur-et)
-    - [II-2-c) L'operateur non](#ii-2-c-loperateur-non)
-  - [II-3) Caractères et chaînes de caractères](#ii-3-caractères-et-chaînes-de-caractères)
-    - [II-3-a) Le type `char`](#ii-3-a-le-type-char)
-    - [II-3-b) Le type `string`](#ii-3-b-le-type-string)
-- [III) Instructions](#iii-instructions)
-  - [III-1) Instructions d'impression](#iii-1-instructions-dimpression)
-  - [III-2) Instruction du jeu de carte sous Unity](#iii-2-instruction-du-jeu-de-carte-sous-unity)
-    - [III-2-a) Initialisation des deck](#iii-2-a-initialisation-des-deck)
-    - [III-2-b) Déplacer des cartes](#iii-2-b-déplacer-des-cartes)
-- [Annexe sur les `Boolean`](#annexe-sur-les-boolean)
-  - [Propriétés des opérateurs](#propriétés-des-opérateurs)
-  - [Remarque sur les opérateurs && et ||](#remarque-sur-les-opérateurs--et-)
+- [1. Objectif du cours](#1-objectif-du-cours)
+- [2. Expressions](#2-expressions)
+  - [2.1. Expressions numériques](#21-expressions-numériques)
+    - [2.1.1. les entiers](#211-les-entiers)
+    - [2.1.2. les flottants](#212-les-flottants)
+  - [2.2. Expressions booléennes](#22-expressions-booléennes)
+    - [2.2.1. L'operateur ou](#221-loperateur-ou)
+    - [2.2.2. L'operateur et](#222-loperateur-et)
+    - [2.2.3. L'operateur non](#223-loperateur-non)
+  - [2.3. Caractères et chaînes de caractères](#23-caractères-et-chaînes-de-caractères)
+    - [2.3.1. Le type `char`](#231-le-type-char)
+    - [2.3.2. Le type `string`](#232-le-type-string)
+- [3. Instructions](#3-instructions)
+  - [3.1. Instructions d'impression](#31-instructions-dimpression)
+  - [3.2. Instruction du jeu de carte sous Unity](#32-instruction-du-jeu-de-carte-sous-unity)
+    - [3.2.1. Initialisation des deck](#321-initialisation-des-deck)
+    - [3.2.2. Déplacer des cartes](#322-déplacer-des-cartes)
+- [4. Annexe sur les `Boolean`](#4-annexe-sur-les-boolean)
+  - [4.1. Propriétés des opérateurs](#41-propriétés-des-opérateurs)
+  - [4.2. Remarque sur les opérateurs && et ||](#42-remarque-sur-les-opérateurs--et-)
 
 ________________________________________________________________________________
-## I) Objectif du cours
+## 1. Objectif du cours
 
 Il s'agit de poser les notions de base en programmation impérative :
 
@@ -39,7 +39,7 @@ Pour ce cours, nous utiliserons le langage `CSharp` (noté `C#`) dans le context
 ________________________________________________________________
 
 
-## II Expressions
+## 2. Expressions
 
 Une expression est une manière de représenter un calcul.
 Par exemple, l'aire d'un disque de rayon `r` est donnée par l'expression suivante:
@@ -61,7 +61,7 @@ Dans les formules les grandeurs possèdent ce que les physiciens appellent des d
 
 Lorsqu'on écrit de manière traditionnelle une expression, un certain nombre de conventions d'écriture nous permet d'omettre certains signes d'opérations. Ici, par exemple, les signes de multiplications sont implicites. Lorsqu'on souhaite traduire cette expression de manière informatique, il faudra savoir que des règles strictes devront être appliquées, l'ensemble de ces règles forme la syntaxe du langage, et il faudra absolument les respecter pour espérer obtenir un résultat.
 
-### II-1) Expressions numériques
+### 2.1. Expressions numériques
 
 La syntaxe des expressions numériques est très proche de la notation mathématique usuelle.
 Prenons pour exemple l'instruction suavante:
@@ -73,7 +73,7 @@ Prenons pour exemple l'instruction suavante:
 - Tout d'abord l'expression `(4 * (-3 + 5)) / 2`. Elle est très proche de la notation mathématique usuelle, les nombres sont notés comme d'habitude, l'addition et la division aussi, la multiplication est notée \*, et on utilise des parenthèses pour marquer ici la priorité de certaines opérations sur d'autres.
 - L'expression est terminée par un point virgule `;`. C'est la manière de dire à l'interpréteur que l'expression est terminé et qu'il peut procéder à son évaluation.
 
-#### II-1-a) les entiers
+#### 2.1.1. les entiers
 
 Lors de l'évaluation de l'expression par l'interpréteur, ce dernier va derterminé le type de retour en fonction de l'instruction
 si vous n'utiliser que des entiers et que vous n'utilsez pas l'opérateur de division, l'interpréteur determinera que vous travailler avec les entiers.
@@ -84,7 +84,7 @@ Par exemple l'expression suavante:
 ```
  renverra un entier (`int` pour _integer_)
 
-#### II-1-b) les flottants
+#### 2.1.2. les flottants
 
 Bien entendu, on peut calculer des nombres non entiers que nous nommerons nombres flottants (_float_). Ces nombres sont tous marqués d'un séparateur décimal, le point, qu'ils soient ou non dotés de chiffres après la virgule.
 
@@ -100,7 +100,7 @@ les expressions suivantes sont évalué par l'interpreteur comme des expressions
 
 ```
 
-### II-2) Expressions booléennes
+### 2.2. Expressions booléennes
 
 En programmation, les expressions booléennes sont nécessaires pour effectuer des calculs ou exécuter des instructions dépendant de la réalisation ou non de certaines conditions.
 Les booléens forment un ensemble à deux valeurs seulement, désignés en C# par `true` (vrai) et `false` (faux). Le type des booléens est désigné par bool.
@@ -122,7 +122,7 @@ false && true
 false && (true || ! false)
 ```
 
-#### II-2-a) L'operateur ou
+#### 2.2.1. L'operateur ou
 
 table de vérité
 
@@ -133,7 +133,7 @@ table de vérité
 | true  | false | true   |
 | false | false | false  |
 
-#### II-2-b) L'operateur et
+#### 2.2.2. L'operateur et
 
 table de vérité
 
@@ -144,7 +144,7 @@ table de vérité
 | true  | false | false  |
 | false | false | false  |
 
-#### II-2-c) L'operateur non
+#### 2.2.3. L'operateur non
 
 table de vérité
 
@@ -155,9 +155,9 @@ table de vérité
 
 
 
-### II-3) Caractères et chaînes de caractères
+### 2.3. Caractères et chaînes de caractères
 
-#### II-3-a) Le type `char`
+#### 2.3.1. Le type `char`
 
 Le mot clé `char` représente un type qui représente un caractère Unicode UTF-16.
 
@@ -169,7 +169,7 @@ Une expression littérale de type `char` est obtenue en plaçant le caractère v
 ...
 ```
 
-#### II-3-b) Le type `string`
+#### 2.3.2. Le type `string`
 
 Représente le texte en tant que séquence d’unités de code UTF-16. (`char`)
 Une chaîne est une collection séquentielle de caractères utilisée pour représenter du texte.
@@ -184,7 +184,7 @@ les exemples suivant montrent des instanciation de `string`
 ```
 
 
-## III) Instructions
+## 3. Instructions
 
 En C#, une instruction est une expression dont la valeur est de type `void`. Ce type ne contient pas de valuer. Par conséquent, cela signifie que toute instruction ne retourne pas de valeur et ce même avant que l'expression ne soit évaluée, et donc que ce qui importe n'est pas tant la valeur de retour de l'instruction, que l'effet de bord qu'elle produit. Et d'ailleurs, plutôt que de parler d'évaluation de l'expression, on dit plutôt exécution de l'instruction.
 
@@ -193,7 +193,7 @@ Les effets de bord produits par l'exécution d'une instruction peuvent être de 
 - modification de la valeur de l'environnement courant de travail, par exemple en modifiant la valeur d'une variable.
 - communication du programme avec le monde extérieur, par exemple, par lecture ou écriture d'une valeur.
 
-### III-1) Instructions d'impression
+### 3.1. Instructions d'impression
 
 Plus intéressante est l' instruction pour imprimer ou écrire des valeurs spécifique à Unity. 
 
@@ -204,9 +204,9 @@ Debug.Log("Hello world!");
 Il faut bien comprendre que la réponse de l'interprète à l'exécution de cette instruction ne retourne pas à proprement parler de valeur. Elle se contentre d'imprimer un log dans la console de Unity.
 
 
-### III-2) Instruction du jeu de carte sous Unity
+### 3.2. Instruction du jeu de carte sous Unity
 
-#### III-2-a) Initialisation des deck
+#### 3.2.1. Initialisation des deck
 
 Quand vous lancé le jeu, Unity montre 4 tas de cartes.
 Pour initialisé ces tas appelé `deck` il faudra utiliser l'instruction du GameManager:
@@ -236,7 +236,7 @@ __Exemples:__
 5. L'instruction `gm.InitDeck(deck1,"T+[P]CC");` décrit le tas numéro 1 contenant soit une seule carte de couleur ♣, soit un nombre quelconque de ♠ surmontés de deux ♡.
 6. L'instruction `gm.InitDeck(deck1,"(T+[P])CC");` décrit le tas numéro 1 contenant soit trois cartes ♣ surmontées de deux ♥, soit un nombre quelconque de ♠ surmontés de deux ♡. À noter qu'une autre façon de décrire la même initialisation est d'utiliser la chaîne "TCC + [P]CC".
 
-#### III-2-b) Déplacer des cartes
+#### 3.2.2. Déplacer des cartes
 
 La seule action permettant de modifier l'état des tas est le déplacement de la carte située au sommet d'un tas vers le sommet d'un autre tas. Cette action est donnée par un appel à la procédure `MoveTopCard`.
 
@@ -251,9 +251,9 @@ où `deck1` est le deck duquel on prend une carte, et `deck2` est celui sur lequ
 
 ______________________________________________
 
-## Annexe sur les `Boolean` 
+## 4. Annexe sur les `Boolean` 
 
-### Propriétés des opérateurs
+### 4.1. Propriétés des opérateurs
 
 a, b et c sont trois expressions booléennes.
 
@@ -277,7 +277,7 @@ a, b et c sont trois expressions booléennes.
 | Loi de Morgan (1)                      | !(a ou b) = !a et !b                 |
 | Loi de Morgan (2)                      | !(a et b) = !a ou !b                 |
 
-### Remarque sur les opérateurs && et ||
+### 4.2. Remarque sur les opérateurs && et ||
 
 En logique booléenne, les opérateurs et et ou sont commutatifs
 
