@@ -4,9 +4,9 @@ using UnityEngine;
 
 public enum CardColor
 {
-    Coeur = 0,
-    Treffle = 1,
-    Carreau = 2,
+    Coeur = 2,
+    Treffle = 0,
+    Karreau = 1,
     Pique = 3,
 }
 
@@ -36,20 +36,22 @@ public class Card : MonoBehaviour
     private CardColor _color;
     [SerializeField]
     private bool _isVisible = false;
+    [SerializeField]
     private bool _isFaceUp = true;
 
     private SpriteRenderer _spriteRenderer;
     private Container _container = null;
+    private bool _initialized = false;
 
     public void setValue(int value)
     {
-        _value = (CardValue) Mathf.Clamp(value,0,12);
+        _value = (CardValue)Mathf.Clamp(value, 0, 12);
         updateCard();
     }
 
     public void setColor(int color)
     {
-        _color = (CardColor) Mathf.Clamp(color,0,3);
+        _color = (CardColor)Mathf.Clamp(color, 0, 3);
         updateCard();
     }
     public void setVisible(bool visible)
@@ -85,7 +87,7 @@ public class Card : MonoBehaviour
     }
 
 
-    public void setContainer( Container container)
+    public void setContainer(Container container)
     {
         _container = container;
     }
@@ -97,44 +99,94 @@ public class Card : MonoBehaviour
 
     public void randomize()
     {
-        _color = (CardColor) Random.Range(0, 4);
-        _value = (CardValue) Random.Range(0, 13);
+        _color = (CardColor)Random.Range(0, 4);
+        _value = (CardValue)Random.Range(0, 13);
+        _isFaceUp = false;
+        _isVisible = false;
+    }
+
+    public void randomize(char desc)
+    {
+
+        switch (desc)
+        {
+            case 'C':
+                _color = CardColor.Coeur;
+                break;
+            case 'T':
+                _color = CardColor.Treffle;
+                break;
+            case 'K':
+                _color = CardColor.Karreau;
+                break;
+            case 'P':
+                _color = CardColor.Pique;
+                break;
+            default:
+                throw new System.ArgumentException("invalid card " + desc);
+        }
+
+        _value = (CardValue)Random.Range(0, 13);
         _isFaceUp = true;
         _isVisible = true;
     }
 
+
+
     private void updateCard()
     {
-        GameManager gameManager = GameManager.Instance();
-        if(gameManager != null)
+        if(_initialized)
         {
+            GameManager gameManager = GameManager.Instance();
+
             int cardIndex = 0;
+            int colorIndex = 0;
+
+            switch (_color) 
+            {
+                case CardColor.Coeur:
+                    colorIndex = 0;
+                    break;
+                case CardColor.Treffle:
+                    colorIndex = 1;
+                    break;
+                case CardColor.Karreau:
+                    colorIndex = 2;
+                    break;
+                case CardColor.Pique:
+                    colorIndex = 3;
+                    break;
+                default:
+                    colorIndex = 0;
+                    break;
+            }
 
             if (_isFaceUp)
-                cardIndex = ((int)_color) * 14 + (((int)_value) + 1);
+                cardIndex = colorIndex * 14 + (((int)_value) + 1);
 
-
-            _spriteRenderer.enabled = _isVisible;
-
-            if (gameManager != null)
+            if (gameManager != null && _isVisible)
                 _spriteRenderer.sprite = gameManager.getCardSprite(cardIndex);
-        }  
+            else
+                _spriteRenderer.sprite = null;
+        }
     }
+    
 
     public void SetLayer(int layer, int sortingLayerID)
     {
         _spriteRenderer.sortingOrder = layer;
         _spriteRenderer.sortingLayerID = sortingLayerID;
     }
-    
+
 
     void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void start()
+    void Start()
     {
+        _initialized = true;
         updateCard();
     }
 
@@ -142,7 +194,8 @@ public class Card : MonoBehaviour
     {
     }
 
-    private void OnValidate() {
+    private void OnValidate()
+    {
         updateCard();
     }
 

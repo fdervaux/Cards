@@ -15,6 +15,11 @@ public abstract class Container : MonoBehaviour
         _cards.Add(card);
     }
 
+    public bool isEmpty()
+    {
+        return _cards.Count == 0;
+    }
+
     public void remove(Card card)
     {
         _cards.Remove(card);

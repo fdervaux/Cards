@@ -7,10 +7,24 @@ public class Deck : Container
     [SerializeField]
     private Vector3 _displacement = new Vector3(0.1f, 0.1f, 0.0f);
 
+    [SerializeField]
+    private bool _isDeal = false;
+
+    private int _cardCount = 0;
+
     public new void Add(Card card)
     {
+        if(_isDeal)
+            _cardCount++;
         base.Add(card);
-        card.setVisible(true);
+    }
+    
+
+    public void initTopCard()
+    {
+        int topCardIndex = _cards.Count - 1;
+        _cards[topCardIndex].transform.position = transform.position + topCardIndex * _displacement;
+        _cards[topCardIndex].SetLayer(topCardIndex, SortingLayer.NameToID("Deck"));
     }
 
     public Card getTopCard()
@@ -22,8 +36,9 @@ public class Deck : Container
     {
         for (int i = 0; i < _cards.Count; i++)
         {
-            _cards[i].transform.position = transform.position + i * _displacement;
-            _cards[i].SetLayer(i, SortingLayer.NameToID("Deck"));
+            int index = _isDeal?(_cardCount - _cards.Count + i):i;
+            _cards[i].transform.position = transform.position + index * _displacement;
+            _cards[i].SetLayer(index, SortingLayer.NameToID("Deck"));
         }
     }
 
