@@ -28,7 +28,7 @@ En utilisant les tables de vérité, prouvez quelques propriétés des opérateu
 
 ## Exercice 2-2 Ou exclusif
 
-Si a et b sont deux expressions booléennes, le ou-exclusif de ces deux expressions, noté a⊕b, est une nouvelle expression booléenne qui est vraie si et seulement si une seule des deux expressions a ou b est vraie. La table de vérité du ou-exclusif est donnée
+Si a et b sont deux expressions booléennes, le `ou-exclusif` de ces deux expressions, noté a⊕b, est une nouvelle expression booléenne qui est vraie si et seulement si une seule des deux expressions a ou b est vraie. La table de vérité du `ou-exclusif` est donnée
 
 ### Table 2.6 - Table de vérité de l'opérateur ou-exclusif
 
@@ -44,15 +44,16 @@ F | F |   F
 
 ## Exercice 2-3
 
-Question 1 : Exprimez le fait que [a,b] et [c,d] sont des intervalles disjoints, attention au cas des intervalles vides, par exemple si a = 15 et b = -5.
+__Question 1__ : Exprimez le fait que [a,b] et [c,d] sont des intervalles disjoints, attention au cas des intervalles vides, par exemple si a = 15 et b = -5.
 
-Question 2 : Exprimez le fait que [a,b] et [c,d] sont des intervalles qui se recouvrent partiellement de deux manières :
+__Question 2__ : Exprimez le fait que [a,b] et [c,d] sont des intervalles qui se recouvrent partiellement de deux manières :
 
-en utilisant la solution de la question précédente (c'est très simple) ;
-directement (c'est compliqué !).
-Exercice 2-4 Égalité et valeur booléenne
+- en utilisant la solution de la question précédente (c'est très simple) ;
+- directement (c'est compliqué !).
 
-Question 1 : Soit a une expression booléenne. Réalisez la table de vérité des expressions :
+## Exercice 2-4 Égalité et valeur booléenne
+
+__Question 1__ : Soit a une expression booléenne. Réalisez la table de vérité des expressions :
 
 a = V ;
 a = F.
