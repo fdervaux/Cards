@@ -55,5 +55,5 @@ __Question 2__ : Exprimez le fait que [a,b] et [c,d] sont des intervalles qui se
 
 __Question 1__ : Soit a une expression booléenne. Réalisez la table de vérité des expressions :
 
-a = V ;
-a = F.
+- a = V
+- a = F
