@@ -20,6 +20,62 @@ Pour chacune des descriptions qui suivent, donnez l'instruction d'initialisation
 - le tas 1 contient un nombre pair de ♣ ou un nombre multiple de 3 de ♠ ;
 - les deux cartes extrêmes du tas 1 (la plus basse et la plus haute) sont des ♣, entre les deux il y a un nombre quelconque de successions de deux cartes de couleur ♢♡.
 
+## Exercice A-2 ★
+
+Situation initiale :
+
+Tas 1 : "TT" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "" Tas 2 : "TT"
+
+Tas 3 : "" Tas 4 : ""
+
+## Exercice A-3 ★
+
+Situation initiale :
+
+Tas 1 : "TK" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "KT" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+## Exercice A-4 ★
+
+Situation initiale :
+
+Tas 1 : "TKTK" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "KKTT" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+## Exercice A-5 ★
+
+Situation initiale :
+
+Tas 1 : "TKCP" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "PCKT" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
 # Exercice Boolean
 
 ## Exercice 2-1

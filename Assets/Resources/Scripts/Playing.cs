@@ -19,11 +19,12 @@ public class Playing : MonoBehaviour
 
         gm.InitDeck(deck1, "TTT");
         gm.InitDeck(deck2, "PPP");
-        gm.InitDeck(deck3, "CCC");
-        gm.InitDeck(deck4, "KKK");
+
+        gm.MoveTopCard(deck1, deck2);
+        gm.MoveTopCard(deck1, deck2);
+        gm.MoveTopCard(deck1, deck2);
 
 
-        Debug.Log(gm.Superior(deck1, deck2));
 
 
         // **********************************************

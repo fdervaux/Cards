@@ -817,7 +817,7 @@ MonoBehaviour:
   - {fileID: 1093974468}
   _discardDeck: {fileID: 583170117}
   _dealDeck: {fileID: 1472531779}
-  _animationDuration: 0.05
+  _animationDuration: 0.5
   _animationCurve:
     serializedVersion: 2
     m_Curve:
