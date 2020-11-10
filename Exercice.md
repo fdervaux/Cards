@@ -1,4 +1,4 @@
-# Exercice Carte
+# Exercice Carte Basic
 
 ## Exercice A-1
 
@@ -73,6 +73,66 @@ Tas 3 : "" Tas 4 : ""
 Situation finale :
 
 Tas 1 : "PCKT" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+# Exercice Carte Conditionnelle
+
+## Exercice A-6 ★
+
+Situation initiale :
+
+Tas 1 : "T+P" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "" Tas 2 : "[T]"
+
+Tas 3 : "[P]" Tas 4 : ""
+
+## Exercice A-7 ★
+
+Situation initiale :
+
+Tas 1 : "(T+K+C+P)(T+K+C+P)" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "" Tas 2 : ""
+
+Tas 3 : "(T+K+C+P)(T+K+C+P)"↑ Tas 4 : ""
+
+Le symbole ↑ signifiant que les cartes sont dans l'ordre croissant (i.e. la carte du dessous a une valeur inférieure ou égale à celle du dessus).
+
+## Exercice A-8 ★
+
+Situation initiale :
+
+Tas 1 : "T+K+C+P" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "[T]" Tas 2 : "[K]"
+
+Tas 3 : "[C]" Tas 4 : "[P]"
+
+## Exercice A-9 ★
+
+Situation initiale :
+
+Tas 1 : "(T+K+C+P)(T+K+C+P)" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "[K+C]" Tas 2 : "[T+P]"
 
 Tas 3 : "" Tas 4 : ""
 
