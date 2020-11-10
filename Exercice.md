@@ -26,14 +26,14 @@ __Situation initiale :__
 
 - Deck 1 : `"TT"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `""`
 - Deck 2 : `"TT"`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 ## Exercice A-3 ★
@@ -42,14 +42,14 @@ __Situation initiale :__
 
 - Deck 1 : `"TK"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"KT"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 ## Exercice A-4 ★
@@ -58,14 +58,14 @@ __Situation initiale :__
 
 - Deck 1 : `"TKTK"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"KKTT"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 ## Exercice A-5 ★
@@ -74,14 +74,14 @@ __Situation initiale :__
 
 - Deck 1 : `"TKCP"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"PCKT"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 # Exercice Carte Conditionnelle
@@ -92,14 +92,14 @@ __Situation initiale :__
 
 - Deck 1 : `"T+P"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `""`
 - Deck 2 : `"[T]"`
-- Deck 3  `"[P]"`
+- Deck 3 : `"[P]"`
 - Deck 4 : `""`
 
 ## Exercice A-7 ★
@@ -108,14 +108,14 @@ __Situation initiale :__
 
 - Deck 1 : `"(T+K+C+P)(T+K+C+P)"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `""`
 - Deck 2 : `""`
-- Deck 3  `"(T+K+C+P)(T+K+C+P)"↑`
+- Deck 3 : `"(T+K+C+P)(T+K+C+P)"↑`
 - Deck 4 : `""`
 
 Le symbole ↑ signifiant que les cartes sont dans l'ordre croissant (i.e. la carte du dessous a une valeur inférieure ou égale à celle du dessus).
@@ -126,14 +126,14 @@ __Situation initiale :__
 
 - Deck 1 : `"T+K+C+P"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"[T]"`
 - Deck 2 : `"[K]"`
-- Deck 3  `"[C]"`
+- Deck 3 : `"[C]"`
 - Deck 4 : `"[P]"`
 
 ## Exercice A-9 ★
@@ -142,14 +142,14 @@ __Situation initiale :__
 
 - Deck 1 : `"(T+K+C+P)(T+K+C+P)"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"[K+C]"`
 - Deck 2 : `"[T+P]"`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 # Exercice Carte While
@@ -160,14 +160,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[T]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `""`
 - Deck 2 : `"[T]"`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 ## Exercice A-11 ★★
@@ -176,14 +176,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[K+C][T+P]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"[T+P][K+C]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 ## Exercice A-12 ★★
@@ -192,21 +192,21 @@ __Situation initiale :__
 
 - Deck 1 : `"[K]"`
 - Deck 2 : `"[T]"`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"[K]"`
 - Deck 2 : `""`
-- Deck 3  `"[KT]"`
+- Deck 3 : `"[KT]"`
 - Deck 4 : `""`
 
 ou bien :
 
 - Deck 1 : `""`
 - Deck 2 : `"[T]"`
-- Deck 3  `"[KT]"`
+- Deck 3 : `"[KT]"`
 - Deck 4 : `""`
 
 ## Exercice A-13 ★★
@@ -215,14 +215,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[T]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `""`
 - Deck 2 : `"[T]"`
-- Deck 3  `"[T]"`
+- Deck 3 : `"[T]"`
 - Deck 4 : `""`
 
 Le nombre de cartes des Deck 2 et 3 différant d'au plus 1 dans la situation finale.
@@ -233,14 +233,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[T]"`
 - Deck 2 : `"[K]"`
-- Deck 3  `"[P]"`
+- Deck 3 : `"[P]"`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `""`
 - Deck 2 : `"[T]"`
-- Deck 3  `"[K]"`
+- Deck 3 : `"[K]"`
 - Deck 4 : `"[P]"`
 
 En faire deux versions, la seconde utilisant une procédure vider_Deck(depart,arrivee) qui vide le Deck depart sur le Deck arrivee.
@@ -251,14 +251,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[T]"`
 - Deck 2 : `"[K]"`
-- Deck 3  `"[C]"`
+- Deck 3 : `"[C]"`
 - Deck 4 : `"[P]"`
 
 __Situation finale :__
 
 - Deck 1 : `"[P]"`
 - Deck 2 : `"[T]"`
-- Deck 3  `"[K]"`
+- Deck 3 : `"[K]"`
 - Deck 4 : `"[C]"`
 
 ## Exercice A-16 ★★
@@ -267,14 +267,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[T][K][C][P]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"[P][C][K][T]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 ## Exercice A-17 ★★
@@ -283,14 +283,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[T]"`
 - Deck 2 : `"[K]"`
-- Deck 3  `"[P]"`
+- Deck 3 : `"[P]"`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `""`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `"[TKP][XY][Z]"`
 
 Où X et Y désignent les deux couleurs restantes lorsque l'une des couleurs manque, et Z désigne la couleur restante lorsque X ou Y manque.
@@ -301,14 +301,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[T+K+C+P]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"[T]"`
 - Deck 2 : `"[K]"`
-- Deck 3  `"[C]"`
+- Deck 3 : `"[C]"`
 - Deck 4 : `"[P]"`
 
 ## Exercice A-19 ★★
@@ -317,14 +317,14 @@ __Situation initiale :__
 
 - Deck 1 : `"T[T]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `""`
 - Deck 2 : `"T"−
-- Deck 3  `"[T]"`
+- Deck 3 : `"[T]"`
 - Deck 4 : `""`
 
 Le symbole − indique que la carte est de valeur minimale.
@@ -335,14 +335,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[T]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `""`
 - Deck 2 : `"[T]↑
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 Le symbole ↑ signifiant que les cartes sont rangées par ordre croissant de valeurs de bas en haut.
@@ -353,14 +353,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[T+K]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"[X][Y]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 Le symbole X désigne la couleur (♣ ou ♢) la plus nombreuse, l'autre couleur étant désignée par Y.
@@ -371,14 +371,14 @@ __Situation initiale :__
 
 - Deck 1 : `"K[T]"`
 - Deck 2 : `""`
-- Deck 3  `""`
+- Deck 3 : `""`
 - Deck 4 : `""`
 
 __Situation finale :__
 
 - Deck 1 : `"[T+K]"`
 - Deck 2 : `"[T+K]"`
-- Deck 3  `"[T+K]"`
+- Deck 3 : `"[T+K]"`
 - Deck 4 : `"[T+K]"`
 
 Les trèfles étant équitablement répartis sur les quatre Deck, l'unique carreau se trouvant n'importe où.
@@ -391,14 +391,14 @@ __Situation initiale :__
 
 - Deck 1 : `"[T]"`
 - Deck 2 : `"[K]"`
-- Deck 3  `"[C]"`
+- Deck 3 : `"[C]"`
 - Deck 4 : `"[P]"`
 
 __Situation finale :__
 
 - Deck 1 : `"[T] ↑"`
 - Deck 2 : `"[K] ↑"`
-- Deck 3  `"[C] ↑"`
+- Deck 3 : `"[C] ↑"`
 - Deck 4 : `"[P] ↑"`
 
 Le symbole ↑ signifiant que les cartes sont rangées par ordre croissant de valeurs de bas en haut.
