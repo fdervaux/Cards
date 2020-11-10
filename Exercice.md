@@ -136,6 +136,229 @@ Tas 1 : "[K+C]" Tas 2 : "[T+P]"
 
 Tas 3 : "" Tas 4 : ""
 
+# Exercice Carte While
+
+## Exercice A-10 ★
+
+Situation initiale :
+
+Tas 1 : "[T]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "" Tas 2 : "[T]"
+
+Tas 3 : "" Tas 4 : ""
+
+## Exercice A-11 ★★
+
+Situation initiale :
+
+Tas 1 : "[K+C][T+P]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "[T+P][K+C]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+## Exercice A-12 ★★
+
+Situation initiale :
+
+Tas 1 : "[K]" Tas 2 : "[T]"
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "[K]" Tas 2 : ""
+
+Tas 3 : "[KT]" Tas 4 : ""
+
+ou bien :
+
+Tas 1 : "" Tas 2 : "[T]"
+
+Tas 3 : "[KT]" Tas 4 : ""
+
+## Exercice A-13 ★★
+
+Situation initiale :
+
+Tas 1 : "[T]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "" Tas 2 : "[T]"
+
+Tas 3 : "[T]" Tas 4 : ""
+
+Le nombre de cartes des tas 2 et 3 différant d'au plus 1 dans la situation finale.
+
+## Exercice A-14 ★
+
+Situation initiale :
+
+Tas 1 : "[T]" Tas 2 : "[K]"
+
+Tas 3 : "[P]" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "" Tas 2 : "[T]"
+
+Tas 3 : "[K]" Tas 4 : "[P]"
+
+En faire deux versions, la seconde utilisant une procédure vider_tas(depart,arrivee) qui vide le tas depart sur le tas arrivee.
+
+## Exercice A-15 ★★
+
+Situation initiale :
+
+Tas 1 : "[T]" Tas 2 : "[K]"
+
+Tas 3 : "[C]" Tas 4 : "[P]"
+
+Situation finale :
+
+Tas 1 : "[P]" Tas 2 : "[T]"
+
+Tas 3 : "[K]" Tas 4 : "[C]"
+
+## Exercice A-16 ★★
+
+Situation initiale :
+
+Tas 1 : "[T][K][C][P]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "[P][C][K][T]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+## Exercice A-17 ★★
+
+Situation initiale :
+
+Tas 1 : "[T]" Tas 2 : "[K]"
+
+Tas 3 : "[P]" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : "[TKP][XY][Z]"
+
+Où X et Y désignent les deux couleurs restantes lorsque l'une des couleurs manque, et Z désigne la couleur restante lorsque X ou Y manque.
+
+## Exercice A-18 ★★
+
+Situation initiale :
+
+Tas 1 : "[T+K+C+P]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "[T]" Tas 2 : "[K]"
+
+Tas 3 : "[C]" Tas 4 : "[P]"
+
+## Exercice A-19 ★★
+
+Situation initiale :
+
+Tas 1 : "T[T]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "" Tas 2 : "T"−
+
+Tas 3 : "[T]" Tas 4 : ""
+
+Le symbole − indique que la carte est de valeur minimale.
+
+## Exercice A-20 ★★★
+
+Situation initiale :
+
+Tas 1 : "[T]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "" Tas 2 : "[T]↑
+
+Tas 3 : "" Tas 4 : ""
+
+Le symbole ↑ signifiant que les cartes sont rangées par ordre croissant de valeurs de bas en haut.
+
+## Exercice A-21 ★★
+
+Situation initiale :
+
+Tas 1 : "[T+K]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "[X][Y]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Le symbole X désigne la couleur (♣ ou ♢) la plus nombreuse, l'autre couleur étant désignée par Y.
+
+## Exercice A-22 ★★★
+
+Situation initiale :
+
+Tas 1 : "K[T]" Tas 2 : ""
+
+Tas 3 : "" Tas 4 : ""
+
+Situation finale :
+
+Tas 1 : "[T+K]" Tas 2 : "[T+K]"
+
+Tas 3 : "[T+K]" Tas 4 : "[T+K]"
+
+Les trèfles étant équitablement répartis sur les quatre tas, l'unique carreau se trouvant n'importe où.
+
+Remarque : ce problème est infaisable sans le carreau.
+
+## Exercice A-23 ★★★
+
+Situation initiale :
+
+Tas 1 : "[T]" Tas 2 : "[K]"
+
+Tas 3 : "[C]" Tas 4 : "[P]"
+
+Situation finale :
+
+Tas 1 : "[T] ↑" Tas 2 : "[K] ↑"
+
+Tas 3 : "[C] ↑" Tas 4 : "[P] ↑"
+
+Le symbole ↑ signifiant que les cartes sont rangées par ordre croissant de valeurs de bas en haut.
+
+
 # Exercice Boolean
 
 ## Exercice 2-1
