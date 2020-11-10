@@ -2,362 +2,438 @@
 
 ## Exercice A-1
 
-Pour chacune des descriptions qui suivent, donnez l'instruction d'initialisation du tas qui convient :
+Pour chacune des descriptions qui suivent, donnez l'instruction d'initialisation du Deck qui convient :
 
-- le tas 1 contient une carte de couleur ♣ ;
-- le tas 1 contient une carte de couleur ♣ ou ♠ ;
-- le tas 1 contient une carte de couleur quelconque ;
-- le tas 1 contient deux cartes de couleur ♡ ;
-- le tas 1 contient une carte de couleur ♡ surmontée d'un ♢ ;
-- le tas 1 contient un nombre quelconque de ♠ ;
-- le tas 1 contient un nombre quelconque de ♠ ou bien un nombre quelconque de ♡ ;
-- le tas 1 contient un nombre quelconque de cartes de couleur ♠ ou ♡ ;
-- le tas 1 contient un nombre quelconque de cartes de couleur quelconque ;
-- le tas 1 contient au moins un carreau ;
-- le tas 1 contient un ♣ surmonté soit d'un nombre quelconque de ♡, soit d'un nombre quelconque non nul de ♠ ;
-- le tas 1 contient un nombre pair de ♡ ;
-- le tas 1 contient un nombre impair de ♡ ;
-- le tas 1 contient un nombre pair de ♣ ou un nombre multiple de 3 de ♠ ;
-- les deux cartes extrêmes du tas 1 (la plus basse et la plus haute) sont des ♣, entre les deux il y a un nombre quelconque de successions de deux cartes de couleur ♢♡.
+- le Deck 1 contient une carte de couleur ♣ ;
+- le Deck 1 contient une carte de couleur ♣ ou ♠ ;
+- le Deck 1 contient une carte de couleur quelconque ;
+- le Deck 1 contient deux cartes de couleur ♡ ;
+- le Deck 1 contient une carte de couleur ♡ surmontée d'un ♢ ;
+- le Deck 1 contient un nombre quelconque de ♠ ;
+- le Deck 1 contient un nombre quelconque de ♠ ou bien un nombre quelconque de ♡ ;
+- le Deck 1 contient un nombre quelconque de cartes de couleur ♠ ou ♡ ;
+- le Deck 1 contient un nombre quelconque de cartes de couleur quelconque ;
+- le Deck 1 contient au moins un carreau ;
+- le Deck 1 contient un ♣ surmonté soit d'un nombre quelconque de ♡, soit d'un nombre quelconque non nul de ♠ ;
+- le Deck 1 contient un nombre pair de ♡ ;
+- le Deck 1 contient un nombre impair de ♡ ;
+- le Deck 1 contient un nombre pair de ♣ ou un nombre multiple de 3 de ♠ ;
+- les deux cartes extrêmes du Deck 1 (la plus basse et la plus haute) sont des ♣, entre les deux il y a un nombre quelconque de successions de deux cartes de couleur ♢♡.
 
 ## Exercice A-2 ★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "TT" Tas 2 : ""
+- Deck 1 : `"TT"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "" Tas 2 : "TT"
-
-Tas 3 : "" Tas 4 : ""
+- Deck 1 : `""`
+- Deck 2 : `"TT"`
+- Deck 3  `""`
+- Deck 4 : `""`
 
 ## Exercice A-3 ★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "TK" Tas 2 : ""
+- Deck 1 : `"TK"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "KT" Tas 2 : ""
-
-Tas 3 : "" Tas 4 : ""
+- Deck 1 : `"KT"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
 ## Exercice A-4 ★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "TKTK" Tas 2 : ""
+- Deck 1 : `"TKTK"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "KKTT" Tas 2 : ""
-
-Tas 3 : "" Tas 4 : ""
+- Deck 1 : `"KKTT"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
 ## Exercice A-5 ★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "TKCP" Tas 2 : ""
+- Deck 1 : `"TKCP"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "PCKT" Tas 2 : ""
-
-Tas 3 : "" Tas 4 : ""
+- Deck 1 : `"PCKT"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
 # Exercice Carte Conditionnelle
 
 ## Exercice A-6 ★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "T+P" Tas 2 : ""
+- Deck 1 : `"T+P"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "" Tas 2 : "[T]"
-
-Tas 3 : "[P]" Tas 4 : ""
+- Deck 1 : `""`
+- Deck 2 : `"[T]"`
+- Deck 3  `"[P]"`
+- Deck 4 : `""`
 
 ## Exercice A-7 ★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "(T+K+C+P)(T+K+C+P)" Tas 2 : ""
+- Deck 1 : `"(T+K+C+P)(T+K+C+P)"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "" Tas 2 : ""
-
-Tas 3 : "(T+K+C+P)(T+K+C+P)"↑ Tas 4 : ""
+- Deck 1 : `""`
+- Deck 2 : `""`
+- Deck 3  `"(T+K+C+P)(T+K+C+P)"↑`
+- Deck 4 : `""`
 
 Le symbole ↑ signifiant que les cartes sont dans l'ordre croissant (i.e. la carte du dessous a une valeur inférieure ou égale à celle du dessus).
 
 ## Exercice A-8 ★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "T+K+C+P" Tas 2 : ""
+- Deck 1 : `"T+K+C+P"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "[T]" Tas 2 : "[K]"
-
-Tas 3 : "[C]" Tas 4 : "[P]"
+- Deck 1 : `"[T]"`
+- Deck 2 : `"[K]"`
+- Deck 3  `"[C]"`
+- Deck 4 : `"[P]"`
 
 ## Exercice A-9 ★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "(T+K+C+P)(T+K+C+P)" Tas 2 : ""
+- Deck 1 : `"(T+K+C+P)(T+K+C+P)"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "[K+C]" Tas 2 : "[T+P]"
-
-Tas 3 : "" Tas 4 : ""
+- Deck 1 : `"[K+C]"`
+- Deck 2 : `"[T+P]"`
+- Deck 3  `""`
+- Deck 4 : `""`
 
 # Exercice Carte While
 
 ## Exercice A-10 ★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[T]" Tas 2 : ""
+- Deck 1 : `"[T]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "" Tas 2 : "[T]"
-
-Tas 3 : "" Tas 4 : ""
+- Deck 1 : `""`
+- Deck 2 : `"[T]"`
+- Deck 3  `""`
+- Deck 4 : `""`
 
 ## Exercice A-11 ★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[K+C][T+P]" Tas 2 : ""
+- Deck 1 : `"[K+C][T+P]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "[T+P][K+C]" Tas 2 : ""
-
-Tas 3 : "" Tas 4 : ""
+- Deck 1 : `"[T+P][K+C]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
 ## Exercice A-12 ★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[K]" Tas 2 : "[T]"
+- Deck 1 : `"[K]"`
+- Deck 2 : `"[T]"`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "[K]" Tas 2 : ""
-
-Tas 3 : "[KT]" Tas 4 : ""
+- Deck 1 : `"[K]"`
+- Deck 2 : `""`
+- Deck 3  `"[KT]"`
+- Deck 4 : `""`
 
 ou bien :
 
-Tas 1 : "" Tas 2 : "[T]"
-
-Tas 3 : "[KT]" Tas 4 : ""
+- Deck 1 : `""`
+- Deck 2 : `"[T]"`
+- Deck 3  `"[KT]"`
+- Deck 4 : `""`
 
 ## Exercice A-13 ★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[T]" Tas 2 : ""
+- Deck 1 : `"[T]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
+- Deck 1 : `""`
+- Deck 2 : `"[T]"`
+- Deck 3  `"[T]"`
+- Deck 4 : `""`
 
-Tas 1 : "" Tas 2 : "[T]"
-
-Tas 3 : "[T]" Tas 4 : ""
-
-Le nombre de cartes des tas 2 et 3 différant d'au plus 1 dans la situation finale.
+Le nombre de cartes des Deck 2 et 3 différant d'au plus 1 dans la situation finale.
 
 ## Exercice A-14 ★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[T]" Tas 2 : "[K]"
+- Deck 1 : `"[T]"`
+- Deck 2 : `"[K]"`
+- Deck 3  `"[P]"`
+- Deck 4 : `""`
 
-Tas 3 : "[P]" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
+- Deck 1 : `""`
+- Deck 2 : `"[T]"`
+- Deck 3  `"[K]"`
+- Deck 4 : `"[P]"`
 
-Tas 1 : "" Tas 2 : "[T]"
-
-Tas 3 : "[K]" Tas 4 : "[P]"
-
-En faire deux versions, la seconde utilisant une procédure vider_tas(depart,arrivee) qui vide le tas depart sur le tas arrivee.
+En faire deux versions, la seconde utilisant une procédure vider_Deck(depart,arrivee) qui vide le Deck depart sur le Deck arrivee.
 
 ## Exercice A-15 ★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[T]" Tas 2 : "[K]"
+- Deck 1 : `"[T]"`
+- Deck 2 : `"[K]"`
+- Deck 3  `"[C]"`
+- Deck 4 : `"[P]"`
 
-Tas 3 : "[C]" Tas 4 : "[P]"
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "[P]" Tas 2 : "[T]"
-
-Tas 3 : "[K]" Tas 4 : "[C]"
+- Deck 1 : `"[P]"`
+- Deck 2 : `"[T]"`
+- Deck 3  `"[K]"`
+- Deck 4 : `"[C]"`
 
 ## Exercice A-16 ★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[T][K][C][P]" Tas 2 : ""
+- Deck 1 : `"[T][K][C][P]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "[P][C][K][T]" Tas 2 : ""
-
-Tas 3 : "" Tas 4 : ""
+- Deck 1 : `"[P][C][K][T]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
 ## Exercice A-17 ★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[T]" Tas 2 : "[K]"
+- Deck 1 : `"[T]"`
+- Deck 2 : `"[K]"`
+- Deck 3  `"[P]"`
+- Deck 4 : `""`
 
-Tas 3 : "[P]" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "" Tas 2 : ""
-
-Tas 3 : "" Tas 4 : "[TKP][XY][Z]"
+- Deck 1 : `""`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `"[TKP][XY][Z]"`
 
 Où X et Y désignent les deux couleurs restantes lorsque l'une des couleurs manque, et Z désigne la couleur restante lorsque X ou Y manque.
 
 ## Exercice A-18 ★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[T+K+C+P]" Tas 2 : ""
+- Deck 1 : `"[T+K+C+P]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "[T]" Tas 2 : "[K]"
-
-Tas 3 : "[C]" Tas 4 : "[P]"
+- Deck 1 : `"[T]"`
+- Deck 2 : `"[K]"`
+- Deck 3  `"[C]"`
+- Deck 4 : `"[P]"`
 
 ## Exercice A-19 ★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "T[T]" Tas 2 : ""
+- Deck 1 : `"T[T]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "" Tas 2 : "T"−
-
-Tas 3 : "[T]" Tas 4 : ""
+- Deck 1 : `""`
+- Deck 2 : `"T"−
+- Deck 3  `"[T]"`
+- Deck 4 : `""`
 
 Le symbole − indique que la carte est de valeur minimale.
 
 ## Exercice A-20 ★★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[T]" Tas 2 : ""
+- Deck 1 : `"[T]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "" Tas 2 : "[T]↑
-
-Tas 3 : "" Tas 4 : ""
+- Deck 1 : `""`
+- Deck 2 : `"[T]↑
+- Deck 3  `""`
+- Deck 4 : `""`
 
 Le symbole ↑ signifiant que les cartes sont rangées par ordre croissant de valeurs de bas en haut.
 
 ## Exercice A-21 ★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[T+K]" Tas 2 : ""
+- Deck 1 : `"[T+K]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "[X][Y]" Tas 2 : ""
-
-Tas 3 : "" Tas 4 : ""
+- Deck 1 : `"[X][Y]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
 Le symbole X désigne la couleur (♣ ou ♢) la plus nombreuse, l'autre couleur étant désignée par Y.
 
 ## Exercice A-22 ★★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "K[T]" Tas 2 : ""
+- Deck 1 : `"K[T]"`
+- Deck 2 : `""`
+- Deck 3  `""`
+- Deck 4 : `""`
 
-Tas 3 : "" Tas 4 : ""
+__Situation finale :__
 
-Situation finale :
+- Deck 1 : `"[T+K]"`
+- Deck 2 : `"[T+K]"`
+- Deck 3  `"[T+K]"`
+- Deck 4 : `"[T+K]"`
 
-Tas 1 : "[T+K]" Tas 2 : "[T+K]"
-
-Tas 3 : "[T+K]" Tas 4 : "[T+K]"
-
-Les trèfles étant équitablement répartis sur les quatre tas, l'unique carreau se trouvant n'importe où.
+Les trèfles étant équitablement répartis sur les quatre Deck, l'unique carreau se trouvant n'importe où.
 
 Remarque : ce problème est infaisable sans le carreau.
 
 ## Exercice A-23 ★★★
 
-Situation initiale :
+__Situation initiale :__
 
-Tas 1 : "[T]" Tas 2 : "[K]"
+- Deck 1 : `"[T]"`
+- Deck 2 : `"[K]"`
+- Deck 3  `"[C]"`
+- Deck 4 : `"[P]"`
 
-Tas 3 : "[C]" Tas 4 : "[P]"
+__Situation finale :__
 
-Situation finale :
-
-Tas 1 : "[T] ↑" Tas 2 : "[K] ↑"
-
-Tas 3 : "[C] ↑" Tas 4 : "[P] ↑"
+- Deck 1 : `"[T] ↑"`
+- Deck 2 : `"[K] ↑"`
+- Deck 3  `"[C] ↑"`
+- Deck 4 : `"[P] ↑"`
 
 Le symbole ↑ signifiant que les cartes sont rangées par ordre croissant de valeurs de bas en haut.
 
+
+# Exercice Carte Fonctions
+
+## Exercice A-24
+
+Soit la fonction définie par
+
+```
+public bool meme_couleur(CardColor color, Deck deck)
+{
+    return gm.topCardColor(deck) == color;
+}
+```
+
+__Question 1__ : Quel problème pose cette fonction si lors d'un appel le Deck passé en paramètre est vide ?
+
+__Question 2__ : Comment modifier la fonction meme_couleur pour qu'elle renvoie la valeur faux si le Deck Deck est vide.
+
+## Exercice A-25 : Égalité de deux cartes
+
+__Question 1__ : Écrivez une fonction qui teste l'égalité de la valeur de deux cartes situées au sommet de deux Deck que l'on supposera non vide.
+
+__Question 2__ : Puis écrivez une fonction qui teste l'égalité de deux cartes (valeur et couleur) situées au sommet de deux Deck supposés non vides.
+
+## Exercice A-26 : Inverser l'ordre des cartes d'un Deck
+
+Il s'agit d'écrire une fonction _inverserDeck_ pour inverser l'ordre des cartes du Deck 1. Par exemple, si on a - Deck 1 : `"TCCPK"` alors après exécution de l'instruction `inverserDeck()`, on doit avoir - Deck 1 : `"KPCCT"`.
+
+__Question 1__ : Faites-le avec l'hypothèse que les autres Deck sont vides.
+
+__Question 2__ : Réaliser la procédure sans supposer que les autres Deck sont vides.
 
 # Exercice Boolean
 
