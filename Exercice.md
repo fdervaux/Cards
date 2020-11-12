@@ -1,3 +1,39 @@
+- [Exercice Carte Basic](#exercice-carte-basic)
+  - [Exercice A-1](#exercice-a-1)
+  - [Exercice A-2 ★](#exercice-a-2-)
+  - [Exercice A-3 ★](#exercice-a-3-)
+  - [Exercice A-4 ★](#exercice-a-4-)
+  - [Exercice A-5 ★](#exercice-a-5-)
+- [Exercice Carte Conditionnelle](#exercice-carte-conditionnelle)
+  - [Exercice A-6 ★](#exercice-a-6-)
+  - [Exercice A-7 ★](#exercice-a-7-)
+  - [Exercice A-8 ★](#exercice-a-8-)
+  - [Exercice A-9 ★](#exercice-a-9-)
+- [Exercice Carte While](#exercice-carte-while)
+  - [Exercice A-10 ★](#exercice-a-10-)
+  - [Exercice A-11 ★★](#exercice-a-11-)
+  - [Exercice A-12 ★★](#exercice-a-12-)
+  - [Exercice A-13 ★★](#exercice-a-13-)
+  - [Exercice A-14 ★](#exercice-a-14-)
+  - [Exercice A-15 ★★](#exercice-a-15-)
+  - [Exercice A-16 ★★](#exercice-a-16-)
+  - [Exercice A-17 ★★](#exercice-a-17-)
+  - [Exercice A-18 ★★](#exercice-a-18-)
+  - [Exercice A-19 ★★](#exercice-a-19-)
+  - [Exercice A-20 ★★★](#exercice-a-20-)
+  - [Exercice A-21 ★★](#exercice-a-21-)
+  - [Exercice A-22 ★★★](#exercice-a-22-)
+  - [Exercice A-23 ★★★](#exercice-a-23-)
+- [Exercice Carte Fonctions](#exercice-carte-fonctions)
+  - [Exercice A-24](#exercice-a-24)
+  - [Exercice A-25 : Égalité de deux cartes](#exercice-a-25--égalité-de-deux-cartes)
+  - [Exercice A-26 : Inverser l'ordre des cartes d'un Deck](#exercice-a-26--inverser-lordre-des-cartes-dun-deck)
+- [Exercice Boolean](#exercice-boolean)
+  - [Exercice 2-1 Démonstration](#exercice-2-1-démonstration)
+  - [Exercice 2-2 Ou exclusif](#exercice-2-2-ou-exclusif)
+  - [Exercice 2-3 Intervales](#exercice-2-3-intervales)
+  - [Exercice 2-4 Égalité et valeur booléenne](#exercice-2-4-égalité-et-valeur-booléenne)
+
 # Exercice Carte Basic
 
 ## Exercice A-1
@@ -437,7 +473,7 @@ __Question 2__ : Réaliser la procédure sans supposer que les autres Deck sont 
 
 # Exercice Boolean
 
-## Exercice 2-1
+## Exercice 2-1 Démonstration
 
 En utilisant les tables de vérité, prouvez quelques propriétés des opérateurs logiques et, ou et non.
 
@@ -445,7 +481,7 @@ En utilisant les tables de vérité, prouvez quelques propriétés des opérateu
 
 Si a et b sont deux expressions booléennes, le `ou-exclusif` de ces deux expressions, noté a⊕b, est une nouvelle expression booléenne qui est vraie si et seulement si une seule des deux expressions a ou b est vraie. La table de vérité du `ou-exclusif` est donnée
 
-### Table 2.6 - Table de vérité de l'opérateur ou-exclusif
+__Table 2.6 - Table de vérité de l'opérateur ou-exclusif__
 
 
 a | b | a ⊕ b
@@ -457,7 +493,7 @@ F | F |   F
 
 Écrivez l'expression a ⊕ b à l'aide des opérateurs et, ou et non.
 
-## Exercice 2-3
+## Exercice 2-3 Intervales
 
 __Question 1__ : Exprimez le fait que [a,b] et [c,d] sont des intervalles disjoints, attention au cas des intervalles vides, par exemple si a = 15 et b = -5.
 
