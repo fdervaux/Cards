@@ -9,7 +9,7 @@ public class Playing : MonoBehaviour
     public Deck deck3;
     public Deck deck4;
     private GameManager gm = null;
-    
+
 
     public bool DeckIsNotEmpty(Deck deck)
     {
@@ -21,6 +21,14 @@ public class Playing : MonoBehaviour
         while (!gm.DeckIsEmpty(deckDepart))
         {
             gm.MoveTopCard(deckDepart, deckDArriver);
+        }
+    }
+
+    public void SecureMoveTopCard(Deck deckDepart, Deck deckDarriver)
+    {
+        if (DeckIsNotEmpty(deckDepart))
+        {
+            gm.MoveTopCard(deckDepart, deckDarriver);
         }
     }
 
@@ -195,7 +203,7 @@ public class Playing : MonoBehaviour
         // deplacer carte de deck1 sur deck3 
         // puis deplacer carte deck2 sur deck3
 
-        while (DeckIsNotEmpty(deck1) && DeckIsNotEmpty(deck2) )
+        while (DeckIsNotEmpty(deck1) && DeckIsNotEmpty(deck2))
         {
             gm.MoveTopCard(deck1, deck3);
             gm.MoveTopCard(deck2, deck3);
@@ -222,10 +230,13 @@ public class Playing : MonoBehaviour
         {
             gm.MoveTopCard(deck1, deck2);
 
+            /*
             if(DeckIsNotEmpty(deck1))
             {
                 gm.MoveTopCard(deck1, deck3);
             }
+            */
+            SecureMoveTopCard(deck1, deck3);
         }
     }
 
@@ -244,10 +255,10 @@ public class Playing : MonoBehaviour
 
     public void exerciceA15()
     {
-        gm.InitDeck(deck1, "[T]T");
-        gm.InitDeck(deck2, "[K]K");
-        gm.InitDeck(deck3, "[C]C");
-        gm.InitDeck(deck4, "[P]P");
+        gm.InitDeck(deck1, "[T]");
+        gm.InitDeck(deck2, "[K]");
+        gm.InitDeck(deck3, "[C]");
+        gm.InitDeck(deck4, "[P]");
 
         /*
             Situation finale :
@@ -269,6 +280,165 @@ public class Playing : MonoBehaviour
         ViderCouleur(deck3, deck1, CardColor.Pique);
     }
 
+    public void exerciceA16()
+    {
+        gm.InitDeck(deck1, "[T][K][C][P]");
+
+        ViderCouleur(deck1, deck2, CardColor.Pique);
+        ViderCouleur(deck1, deck3, CardColor.Coeur);
+        ViderCouleur(deck1, deck4, CardColor.Karreau);
+        ViderCouleur(deck1, deck3, CardColor.Treffle);
+        ViderDeck(deck2, deck1);
+        ViderCouleur(deck3, deck2, CardColor.Treffle);
+        ViderDeck(deck3, deck1);
+        ViderDeck(deck4, deck1);
+        ViderDeck(deck2, deck1);
+    }
+
+    public void exerciceA17()
+    {
+        gm.InitDeck(deck1, "[T]");
+        gm.InitDeck(deck2, "[K]");
+        gm.InitDeck(deck3, "[P]");
+
+        // Pseudo-code
+        // Tant qu'un des trois tas n'est pas vide
+        //      Si le deck1 n'est pas vide 
+        //          deplacer une carte du deck1 sur deck4 
+        //      Si le deck2 n'est pas vide
+        //          deplacer une carte du deck2 sur deck4
+        //      Si le deck3 n'est pas vide
+        //          deplacer une carte du deck3 sur deck4
+
+        while (DeckIsNotEmpty(deck1) || DeckIsNotEmpty(deck2) || DeckIsNotEmpty(deck3))
+        {
+            SecureMoveTopCard(deck1, deck4);
+            SecureMoveTopCard(deck2, deck4);
+            SecureMoveTopCard(deck3, deck4);
+        }
+    }
+
+    public void exerciceA18()
+    {
+        gm.InitDeck(deck1, "[K+P+T+C]T[K+P+T+C]T[K+P+T+C]");
+
+        // Tant que le deck1 n'est pas vide
+        while (DeckIsNotEmpty(deck1))
+        {
+            // Si la carte du dessus du deck 1 est un carreau
+            if (gm.topCardColor(deck1) == CardColor.Karreau)
+            {
+                // Si le deck2 n'est pas vide et que la carte du dessus est un Treffle
+                if (DeckIsNotEmpty(deck2) && gm.topCardColor(deck2) == CardColor.Treffle)
+                {
+                    // On déplace tous les treffles sur le deck3
+                    ViderCouleur(deck2, deck3, CardColor.Treffle);
+                }
+
+                // On déplace les carreau du deck1 sur le deck2
+                ViderCouleur(deck1, deck2, CardColor.Karreau);
+            }
+            // Si la carte du dessus du deck 1 est un coeur
+            else if (gm.topCardColor(deck1) == CardColor.Coeur)
+            {
+                // Si le deck3 n'est pas vide et que la carte du dessus est un Treffle
+                if (DeckIsNotEmpty(deck3) && gm.topCardColor(deck3) == CardColor.Treffle)
+                {
+                    // On déplace tous les treffles sur le deck2
+                    ViderCouleur(deck3, deck2, CardColor.Treffle);
+                }
+                // On déplace les coeur du deck1 sur le deck3
+                ViderCouleur(deck1, deck3, CardColor.Coeur);
+            }
+            // Si la carte du dessus du deck 1 est un pique
+            else if (gm.topCardColor(deck1) == CardColor.Pique)
+            {
+                // On déplace tous les pique sur le deck4
+                ViderCouleur(deck1, deck4, CardColor.Pique);
+            }
+            // Si la carte du dessus du deck 1 est un treffle
+            else if (gm.topCardColor(deck1) == CardColor.Treffle)
+            {
+                // Si le deck3 n'est pas vide et que la carte du dessus est un Treffle
+                if ( DeckIsNotEmpty(deck3) && gm.topCardColor(deck3) == CardColor.Treffle)
+                    //On déplace les treffles du deck 1 sur le deck3
+                    ViderCouleur(deck1, deck3, CardColor.Treffle);
+                else
+                    //On déplace les treffles du deck 1 sur le deck2 
+                    //(cas ou les treffles sont déjà sur le tas 2 ou il n'y à pas encore eu de treffle)
+                    ViderCouleur(deck1, deck2, CardColor.Treffle);
+            }
+        }
+
+        // Mouvement finale, on met les treffles sur le tas 1
+        // Si les treffles sont sur le deck2
+        if (DeckIsNotEmpty(deck2) && gm.topCardColor(deck2) == CardColor.Treffle)
+            //On deplace les treffes sur le deck2 sur le deck1
+            ViderCouleur(deck2, deck1, CardColor.Treffle);
+        // sinon (c'est que le deck3 est vide ou qu'il contient des treffles)
+        else
+            // On deplace les treffes sur le deck3 sur le deck1
+            // (Dans le cas ou il n'y a pas de treffle, la fonction ne fait rien ;) )
+            ViderCouleur(deck3, deck1, CardColor.Treffle);
+    }
+
+    public void exerciceA18bis()
+    {
+        
+
+        gm.InitDeck(deck1, "[K+P+T+C]T[K+P+T+C]T[K+P+T+C]");
+
+
+        // L'idée ici est de remplacer le test fastidieux pour savoir
+        // qu'elle est le deck qui contient les Treffles par l'utilisation d'une variable.
+        // On va donc stocker en mémoire le tas ou sont les treffles.
+        // Pour cela on crée une variable de type Deck que l'on nomme "deckOuSontLesTreffles".
+        // Par défaut on initialise la variable à deck2 .
+        // (Ce qui signifie que la première fois qu'on va bouger les treffles, nous allons arbitrairement choisir le deck2)
+        Deck deckOuSontLesTreffles = deck2;
+
+        while (DeckIsNotEmpty(deck1))
+        {
+            if (gm.topCardColor(deck1) == CardColor.Karreau)
+            {
+
+                // Au lieu de faire le test fastidieux nous regardons simplement si notre variable "deckOuSontLesTreffles" est égale au deck2 
+                if (deckOuSontLesTreffles == deck2)
+                {
+                    ViderCouleur(deck2, deck3, CardColor.Treffle);
+                    //On oublie pas de mettre à jour notre variable "deckOuSontLesTreffles" en affectant sa valeur avec "deck3"
+                    deckOuSontLesTreffles = deck3;
+                }
+                ViderCouleur(deck1, deck2, CardColor.Karreau);
+            }
+            else if (gm.topCardColor(deck1) == CardColor.Coeur)
+            {
+                // Au lieu de faire le test fastidieux nous regardons simplement si notre variable "deckOuSontLesTreffles" est égale au deck3
+                if (deckOuSontLesTreffles == deck3)
+                {
+                    ViderCouleur(deck3, deck2, CardColor.Treffle);
+                    //On oublie pas de mettre à jour notre variable "deckOuSontLesTreffles" en affectant sa valeur avec "deck2"
+                    deckOuSontLesTreffles = deck2;
+                }
+                ViderCouleur(deck1, deck3, CardColor.Coeur);
+            }
+            else if (gm.topCardColor(deck1) == CardColor.Pique)
+            {
+                ViderCouleur(deck1, deck4, CardColor.Pique);
+            }
+            else if (gm.topCardColor(deck1) == CardColor.Treffle)
+            {
+                // Au lieu de tester pour savoir ou sont les treffles, 
+                // on peut ici utiliser directement notre variable pour dire ou déplacer les treffles
+                ViderCouleur(deck1, deckOuSontLesTreffles, CardColor.Treffle);
+            }
+        }
+
+        // De même, Au lieu de tester pour savoir ou sont les treffles, 
+        // On peut ici utiliser directement notre variable pour déplacer les treffles sur le deck1
+        ViderCouleur(deckOuSontLesTreffles, deck1, CardColor.Treffle);
+    }
+
     private void Start()
     {
         gm = GameManager.Instance();
@@ -277,7 +447,13 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        exerciceA15();
+        exerciceA18();
+        gm.InitDeck(deck1, "");
+        gm.InitDeck(deck2, "");
+        gm.InitDeck(deck3, "");
+        gm.InitDeck(deck4, "");
+        exerciceA18bis();
+
 
         // **********************************************
         // **********************************************
