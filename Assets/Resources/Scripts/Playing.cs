@@ -92,9 +92,9 @@ public class Playing : MonoBehaviour
         return resultat;
     }
 
-    public int fibonacciIntelligent(int n , int[] results)
+    public int fibonacciIntelligent(int n, int[] results)
     {
-        if(results[n] == -1)
+        if (results[n] == -1)
         {
             Debug.Log("appel " + n);
 
@@ -117,9 +117,9 @@ public class Playing : MonoBehaviour
 
     public int fibonacciIntelligent(int n)
     {
-        int[] results = new int[n+1];
+        int[] results = new int[n + 1];
 
-        for (int i = 0; i < n+1 ; i++)
+        for (int i = 0; i < n + 1; i++)
         {
             results[i] = -1;
         }
@@ -176,7 +176,7 @@ public class Playing : MonoBehaviour
 
         for (int i = 0; i < numbers.Length; i++)
         {
-            if(estImpair(numbers[i]))
+            if (estImpair(numbers[i]))
             {
                 //inPairNumber = inPairNumber +1;
                 //inPairNumber += 1;
@@ -189,7 +189,7 @@ public class Playing : MonoBehaviour
         }
 
         Debug.Log("Le nombre d'impair dans le tableau est " + inPairNumber);
-        Debug.Log("Le nombre de pair dans le tableau est " + pairNumber);    
+        Debug.Log("Le nombre de pair dans le tableau est " + pairNumber);
     }
 
 
@@ -202,13 +202,107 @@ public class Playing : MonoBehaviour
             sommme += numbers[i];
         }
 
-        float moy = (float) sommme / numbers.Length;
+        float moy = (float)sommme / numbers.Length;
 
         Debug.Log("La moy est " + moy);
 
         return moy;
     }
 
+    public int[] tri(int[] numbers)
+    {
+        int[] numbersTrie = new int[numbers.Length];
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            int minimum = numbers[0];
+            int indiceMinimum = 0;
+
+            for (int j = 0; j < numbers.Length; j++)
+            {
+                if (numbers[j] < minimum)
+                {
+                    minimum = numbers[j];
+                    indiceMinimum = j;
+                }
+            }
+
+            numbersTrie[i] = minimum;
+            numbers[indiceMinimum] = 1000;
+        }
+
+        return numbersTrie;
+
+    }
+
+    public void exerciceC5(ref int[] numbers)
+    {
+        exerciceC2(numbers);
+
+        // randomNumbers => tableau de l'exerciceC1
+
+        numbers = tri(numbers);
+
+        // tableau de l'exercice C1 remplie de 1000
+        // randomNumbers => tableau trié;
+
+        exerciceC2(numbers);
+
+        if (numbers.Length > 0)
+        {
+            int maximum = numbers[0];
+            int minimum = numbers[0];
+            int sommme = 0;
+
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] > maximum)
+                {
+                    maximum = numbers[i];
+                }
+
+                if (numbers[i] < minimum)
+                {
+                    minimum = numbers[i];
+                }
+
+                sommme += numbers[i];
+            }
+
+            float moy = (float)sommme / numbers.Length;
+            float mediane = 0;
+
+            if (numbers.Length % 2 == 0)
+            {
+                int indice1 = numbers.Length / 2;
+                int indice2 = indice1 - 1;
+                mediane = (float)(numbers[indice1] + numbers[indice2]) / 2.0f;
+                // 0 => 1
+                // 1 => 6
+                // 2 => 8 = indice2
+                // 3 => 5 = indice1
+                // 4 => 6
+                // 5 => 5
+            }
+            else
+            {
+                int indice = numbers.Length / 2; // => 3.5 mais division entière donc 3 
+                mediane = numbers[indice];
+                // 0 => 1
+                // 1 => 6
+                // 2 => 8 = indice2
+                // 3 => 5 = indice1
+                // 4 => 6
+                // 5 => 5
+                // 6 => 12
+            }
+
+            Debug.Log("maximum : " + maximum);
+            Debug.Log("minimum : " + minimum);
+            Debug.Log("moyenne : " + moy);
+            Debug.Log("mediane : " + mediane);
+        }
+    }
 
     private void Start()
     {
@@ -218,9 +312,15 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        int[] randomNumbers = exerciceC1(0, 101, 10);
-        //exerciceC2(randomNumbers);
-        exerciceC4(randomNumbers);
+        int[] randomNumbers = exerciceC1(0, 21, 18);
+
+        // randomNumbers => tableau de l'exerciceC1; 
+
+
+        exerciceC5(ref randomNumbers);
+
+
+        exerciceC2(randomNumbers);
 
         //exercice2();
 
@@ -259,5 +359,39 @@ public class Playing : MonoBehaviour
         // **********************************************
         gm.StartAnimation();
     }
+
+    // 8 cases => horizontale
+    // 8 cases => vertical
+
+    // string[][] echiquier = new string[8][8];
+
+    // "" "pion" "cavalier" "fou" "tour" "roi" "reine"
+    // echiquier[0][0] = "tour";
+
+    // initialiser l'échiquier.
+    // afficher l'echiquier en console.
+
+    // déplacements
+    // - déplacement du pion (1 ou 2 case)
+    // - déplacement du fou (direction) 
+    // - déplacement du Tour (direction , nombre de case)
+    // - déplacement du Roi (direction)
+    // - Reine (direction , nombre de case)
+
+    // - prise des pièces
+
+    // liste des pieces prise par blanc
+
+    //    A  B  C  D  E  F  G  H
+    // 1 |BT|BC|BF|BR|Br|BF|BC|BT|
+    // 2 |BP|BP|BP|BP|BP|BP|BP|BP|
+    // 3 |  |  |  |  |  |  |  |  |
+    // 4 |  |  |  |  |  |  |  |  |
+    // 5 |  |  |  |  |  |  |  |  |
+    // 6 |  |  |  |  |  |  |  |  |
+    // 7 |NP|NP|NP|NP|NP|NP|NP|NP|
+    // 8 |NT|NC|NF|Nr|NR|NF|NC|NT|
+
+    // liste des pieces prise par Noir
 
 }
