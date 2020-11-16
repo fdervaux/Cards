@@ -169,6 +169,47 @@ public class Playing : MonoBehaviour
         return !estPair(i);
     }
 
+    public void exerciceC3(int[] numbers)
+    {
+        int inPairNumber = 0;
+        int pairNumber = 0;
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            if(estImpair(numbers[i]))
+            {
+                //inPairNumber = inPairNumber +1;
+                //inPairNumber += 1;
+                inPairNumber++;
+            }
+            else
+            {
+                pairNumber++;
+            }
+        }
+
+        Debug.Log("Le nombre d'impair dans le tableau est " + inPairNumber);
+        Debug.Log("Le nombre de pair dans le tableau est " + pairNumber);    
+    }
+
+
+    public float exerciceC4(int[] numbers)
+    {
+        int sommme = 0;
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            sommme += numbers[i];
+        }
+
+        float moy = (float) sommme / numbers.Length;
+
+        Debug.Log("La moy est " + moy);
+
+        return moy;
+    }
+
+
     private void Start()
     {
         gm = GameManager.Instance();
@@ -177,10 +218,9 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-
-        int[] randomNumbers = exerciceC1(0, 100, 10);
-        exerciceC2(randomNumbers);
-
+        int[] randomNumbers = exerciceC1(0, 101, 10);
+        //exerciceC2(randomNumbers);
+        exerciceC4(randomNumbers);
 
         //exercice2();
 
