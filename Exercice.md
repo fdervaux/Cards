@@ -29,10 +29,16 @@
   - [Exercice A-25 : Égalité de deux cartes](#exercice-a-25--égalité-de-deux-cartes)
   - [Exercice A-26 : Inverser l'ordre des cartes d'un Deck](#exercice-a-26--inverser-lordre-des-cartes-dun-deck)
 - [Exercice Boolean](#exercice-boolean)
-  - [Exercice 2-1 Démonstration](#exercice-2-1-démonstration)
-  - [Exercice 2-2 Ou exclusif](#exercice-2-2-ou-exclusif)
-  - [Exercice 2-3 Intervales](#exercice-2-3-intervales)
-  - [Exercice 2-4 Égalité et valeur booléenne](#exercice-2-4-égalité-et-valeur-booléenne)
+  - [Exercice B-1 Démonstration](#exercice-b-1-démonstration)
+  - [Exercice B-2 Ou exclusif](#exercice-b-2-ou-exclusif)
+  - [Exercice B-3 Intervales](#exercice-b-3-intervales)
+  - [Exercice B-4 Égalité et valeur booléenne](#exercice-b-4-égalité-et-valeur-booléenne)
+- [Exercice Structure de donées](#exercice-structure-de-donées)
+  - [Exercice C-1](#exercice-c-1)
+  - [Exercice C-2](#exercice-c-2)
+  - [Exercice C-3](#exercice-c-3)
+  - [Exercice C-4](#exercice-c-4)
+  - [Exercice C-5](#exercice-c-5)
 
 # Exercice Carte Basic
 
@@ -471,13 +477,14 @@ __Question 1__ : Faites-le avec l'hypothèse que les autres Deck sont vides.
 
 __Question 2__ : Réaliser la procédure sans supposer que les autres Deck sont vides.
 
+
 # Exercice Boolean
 
-## Exercice 2-1 Démonstration
+## Exercice B-1 Démonstration
 
 En utilisant les tables de vérité, prouvez quelques propriétés des opérateurs logiques et, ou et non.
 
-## Exercice 2-2 Ou exclusif
+## Exercice B-2 Ou exclusif
 
 Si a et b sont deux expressions booléennes, le `ou-exclusif` de ces deux expressions, noté a⊕b, est une nouvelle expression booléenne qui est vraie si et seulement si une seule des deux expressions a ou b est vraie. La table de vérité du `ou-exclusif` est donnée
 
@@ -493,7 +500,7 @@ F | F |   F
 
 Écrivez l'expression a ⊕ b à l'aide des opérateurs et, ou et non.
 
-## Exercice 2-3 Intervales
+## Exercice B-3 Intervales
 
 __Question 1__ : Exprimez le fait que [a,b] et [c,d] sont des intervalles disjoints, attention au cas des intervalles vides, par exemple si a = 15 et b = -5.
 
@@ -502,9 +509,45 @@ __Question 2__ : Exprimez le fait que [a,b] et [c,d] sont des intervalles qui se
 - en utilisant la solution de la question précédente (c'est très simple) ;
 - directement (c'est compliqué !).
 
-## Exercice 2-4 Égalité et valeur booléenne
+## Exercice B-4 Égalité et valeur booléenne
 
 __Question 1__ : Soit a une expression booléenne. Réalisez la table de vérité des expressions :
 
 - a = V
 - a = F
+
+# Exercice Structure de donées
+
+## Exercice C-1 
+
+Grâce à l'intruction ci-dessous: 
+
+ ```Random.Range(a,b);``` (https://docs.unity3d.com/ScriptReference/Random.Range.html)
+
+Ecrire une fonction qui prend trois entiers `a`, `b` et `n` et qui renvoie un tableau d'entiers de dimension `n` initialisés aléatoirement entre `a` et `b`.
+
+## Exercice C-2
+
+Ecrire une fonction qui affiche succéssivement les valeurs d'un tableau d'entier
+
+## Exercice C-3
+
+Ecrire une fonction qui cacule et affiche le nombre d'entiers pair d'un tableau.
+Faire la même chose pour les entiers impair.
+
+## Exercice C-4
+
+Ecrire une fonction qui cacule et affiche la moyenne des entiers contenu dans un tableau.
+
+## Exercice C-5
+
+Utiliser la fonction de l'exercice 1 pour générer un tableaux de la taille du nombre d'élèves initialisé entre 0 et 20.
+
+Ecrire und fonction qui affiche
+- Qui renvoie un tableaux des notes trié par ordre croissant. 
+- Qui affihce la Moyennes des Notes.
+- Qui affihce la plus grande note obtenu
+- Qui affihce la plus petite note obtenu
+- Qui affihce la médiane des notes
+
+__Pour calculer la médiane__ : On classe les valeurs de la série statistique dans l'ordre croissant : Si le nombre de valeurs est impair, la médiane est la valeur du milieu. S'il est pair, la médiane est la demi-somme des deux valeurs du milieu.
