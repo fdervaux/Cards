@@ -9,7 +9,6 @@ public class Playing : MonoBehaviour
     public Deck deck3;
     public Deck deck4;
     private GameManager gm = null;
-    private List<int> fibonacciResults = new List<int>();
 
     public void viderCouleur(Deck from, Deck to, CardColor color)
     {
@@ -93,29 +92,82 @@ public class Playing : MonoBehaviour
         return resultat;
     }
 
+    public int fibonacciIntelligent(int n , int[] results)
+    {
+        if(results[n] == -1)
+        {
+            Debug.Log("appel " + n);
+
+            if (n == 0)
+            {
+                results[0] = 0;
+            }
+            else if (n == 1)
+            {
+                results[1] = 1;
+            }
+            else
+            {
+                results[n] = fibonacciIntelligent(n - 1, results) + fibonacciIntelligent(n - 2, results);
+            }
+        }
+
+        return results[n];
+    }
+
     public int fibonacciIntelligent(int n)
     {
-        int resultat = 0;
-        Debug.Log("appel " + n);
+        int[] results = new int[n+1];
 
-        if (n == 0)
+        for (int i = 0; i < n+1 ; i++)
         {
-            resultat = 0;
-        }
-        else if (n == 1)
-        {
-            resultat = 1;
-        }
-        else
-        {
-            resultat = fibonacci(n - 1) + fibonacci(n - 2);
+            results[i] = -1;
         }
 
-        fibonacciResults.Insert(n, resultat);
-        return resultat;
+        return fibonacciIntelligent(n, results);
     }
 
 
+    public int[] exerciceC1(int a, int b, int n)
+    {
+        int[] results = new int[n];
+        for (int i = 0; i < n; i++)
+        {
+            results[i] = Random.Range(a, b);
+        }
+        return results;
+    }
+
+    public void exerciceC2(int[] numbers)
+    {
+        string toPrint = "";
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            toPrint = toPrint + "element à l'indice " + i + " est " + numbers[i] + "\n";
+        }
+
+        Debug.Log(toPrint);
+    }
+
+    public bool estPair(int i)
+    {
+        // 0 2 4 6
+        // modulo => %
+        // 0 mod 2 => 0
+        // 1 mod 2 => 1
+        // 2 mod 2 => 0 
+        // 3 mod 2 => 1 
+        // L’opérateur restant % calcule le reste après la division de son opérande de partie gauche par son opérande de partie droite.
+        return i % 2 == 0;
+    }
+
+
+    public bool estImpair(int i)
+    {
+        // return i % 2 == 1;
+        return !estPair(i);
+    }
 
     private void Start()
     {
@@ -125,7 +177,12 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        exercice2();
+
+        int[] randomNumbers = exerciceC1(0, 100, 10);
+        exerciceC2(randomNumbers);
+
+
+        //exercice2();
 
         //fibonacciResults.insert(0,1);
         //fibonacciResults.Add(1);
@@ -140,8 +197,7 @@ public class Playing : MonoBehaviour
         */
 
         //Debug.Log(fibonacci(3));
-
-
+        //fibonacciIntelligent(5);
 
         //Suite de fibonacci
         // Un+1 = Un + Un-1
