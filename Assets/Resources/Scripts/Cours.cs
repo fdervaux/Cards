@@ -58,16 +58,13 @@ public class Cours : MonoBehaviour
         // U3 = U2 + 2 = (((1+2)+2)+2) = 7
         // ....
 
-        Debug.Log("U(0) = " + U(0));
-        Debug.Log("U(1) = " + U(1));
-        Debug.Log("U(2) = " + U(2));
-        Debug.Log("U(3) = " + U(3));
-        Debug.Log("U(4) = " + U(4));
-        Debug.Log("U(5) = " + U(5));
+        
+  
 
 
         for (int i = 0; i <= 15; i++)
         {
+            Debug.Log("U("+ i +") = " + U(i));
             Debug.Log("V("+ i +") = " + V(i));
         }
 
