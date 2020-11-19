@@ -40,6 +40,24 @@ public class Playing : MonoBehaviour
         }
     }
 
+    private void TrouverPlusPetit(Deck deckDepart, Deck DeckPlusPetit, Deck deckReste)
+    {
+        gm.MoveTopCard(deckDepart, DeckPlusPetit);
+
+        while (DeckIsNotEmpty(deckDepart))
+        {
+            if (gm.Superior(deckDepart, DeckPlusPetit))
+            {
+                gm.MoveTopCard(deckDepart, deckReste);
+            }
+            else
+            {
+                gm.MoveTopCard(DeckPlusPetit, deckReste);
+                gm.MoveTopCard(deckDepart, DeckPlusPetit);
+            }
+        }
+    }
+
     public void exerciceA6()
     {
         gm.InitDeck(deck1, "T+P");
@@ -439,6 +457,16 @@ public class Playing : MonoBehaviour
         ViderCouleur(deckOuSontLesTreffles, deck1, CardColor.Treffle);
     }
 
+    private void exercice19()
+    {
+        gm.InitDeck(deck1, "T[T]");
+
+        TrouverPlusPetit(deck1, deck2, deck3);
+    }
+
+
+
+
     private void Start()
     {
         gm = GameManager.Instance();
@@ -447,13 +475,7 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        exerciceA18();
-        gm.InitDeck(deck1, "");
-        gm.InitDeck(deck2, "");
-        gm.InitDeck(deck3, "");
-        gm.InitDeck(deck4, "");
-        exerciceA18bis();
-
+        exercice19();
 
         // **********************************************
         // **********************************************
