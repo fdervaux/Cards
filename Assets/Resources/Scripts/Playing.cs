@@ -40,7 +40,7 @@ public class Playing : MonoBehaviour
         }
     }
 
-    private void TrouverPlusPetit(Deck deckDepart, Deck DeckPlusPetit, Deck deckReste)
+    public void TrouverPlusPetit(Deck deckDepart, Deck DeckPlusPetit, Deck deckReste)
     {
         gm.MoveTopCard(deckDepart, DeckPlusPetit);
 
@@ -55,6 +55,17 @@ public class Playing : MonoBehaviour
                 gm.MoveTopCard(DeckPlusPetit, deckReste);
                 gm.MoveTopCard(deckDepart, DeckPlusPetit);
             }
+        }
+    }
+
+    private void diviserTasCouleur(Deck deckDepart, Deck DeckDarriver1, Deck DeckDarriver2, CardColor color)
+    {
+        while (DeckIsNotEmpty(deckDepart) && gm.topCardColor(deckDepart) == color)
+        {
+            gm.MoveTopCard(deckDepart, DeckDarriver1);
+
+            if (DeckIsNotEmpty(deckDepart) && gm.topCardColor(deckDepart) == color)
+                gm.MoveTopCard(deckDepart, DeckDarriver2);
         }
     }
 
@@ -465,6 +476,134 @@ public class Playing : MonoBehaviour
     }
 
 
+    private void exercice20()
+    {
+        gm.InitDeck(deck1, "[TTTT]");
+
+
+        while(DeckIsNotEmpty(deck1))
+        {
+            TrouverPlusPetit(deck1, deck2, deck3);
+            if( DeckIsNotEmpty(deck3))
+            {
+                TrouverPlusPetit(deck3, deck2, deck1);
+            }
+        }
+
+        /*
+        
+        // "TTTTTT" "" "" ""
+        TrouverPlusPetit(deck1, deck2, deck3);
+        // "" "T(plusPetit)" "TTTTT" ""
+        ViderDeck(deck3, deck1);
+        // "TTTTT" "T(plusPetit)" "" ""
+        TrouverPlusPetit(deck1, deck2, deck3);
+        // "" "TT (les deux plus petit)" "TTTT" ""
+        ViderDeck(deck3, deck1);
+        // "TTTT" "TT(plusPetit)" "" ""
+        
+        */
+
+    }
+    
+    private void exercice21()
+    {
+        gm.InitDeck(deck1, "TTTKKK"); // TTKTTKKKKK
+
+        //  trier les cartes sur deux tas (treffle sur deck2 et karreau sur deck3)
+        while (DeckIsNotEmpty(deck1))
+        {
+            if( gm.topCardColor(deck1) == CardColor.Treffle)
+            {
+                gm.MoveTopCard(deck1, deck2);
+            }
+            else if( gm.topCardColor(deck1) == CardColor.Karreau)
+            {
+                gm.MoveTopCard(deck1, deck3);
+            }   
+        }
+
+        //On transfert les cartes sur les deck restant jusqu'à ce qu'un deck soit vide
+        while (DeckIsNotEmpty(deck2) && DeckIsNotEmpty(deck3))
+        {
+            gm.MoveTopCard(deck2, deck1);
+            gm.MoveTopCard(deck3, deck4);
+        }
+
+        //Si il y a encore des cartes sur le deck2, ca signifie que les treffles sont majoritaire ou qu'on à le meme nombre de carte
+        if ( DeckIsNotEmpty(deck2) || (gm.DeckIsEmpty(deck2) && gm.DeckIsEmpty(deck3)))
+        {
+            ViderDeck(deck2, deck1);
+            ViderDeck(deck4, deck1);
+        }
+        else // sinon c'est qu'il y a plus de Karreau
+        {
+            ViderDeck(deck1, deck2);
+            ViderDeck(deck3, deck1);
+            ViderDeck(deck4, deck1);
+            ViderDeck(deck2, deck1);
+        }
+    }
+
+
+    private void exercice21bis()
+    {
+        gm.InitDeck(deck1, "TTTKKK[T+K]"); // TTKTTKKKKK
+
+        int nbKarreau = 0;
+        int nbTreffle = 0;
+
+        //  trier les cartes sur deux tas (treffle sur deck2 et karreau sur deck3)
+        while (DeckIsNotEmpty(deck1))
+        {
+            if (gm.topCardColor(deck1) == CardColor.Treffle)
+            {
+                gm.MoveTopCard(deck1, deck2);
+                // nbTreffle = nbTreffle + 1;
+                // nbTreffle += 1;
+                nbTreffle++;
+
+            }
+            else if (gm.topCardColor(deck1) == CardColor.Karreau)
+            {
+                gm.MoveTopCard(deck1, deck3);
+                nbKarreau++;
+            }
+        }
+
+        if(nbKarreau > nbTreffle)
+        {
+            ViderDeck(deck3, deck1);
+            ViderDeck(deck2, deck1);
+        }
+        else
+        {
+            ViderDeck(deck2, deck1);
+            ViderDeck(deck3, deck1);
+        }
+    }
+
+
+
+    private void exercice22()
+    {
+        gm.InitDeck(deck1, "K[TTTT]");
+
+        diviserTasCouleur(deck1, deck2, deck3, CardColor.Treffle);
+        
+        // On deplace le K
+        gm.MoveTopCard(deck1, deck2);
+
+        diviserTasCouleur(deck3, deck1, deck4, CardColor.Treffle);
+
+        // On deplace le K
+        gm.MoveTopCard(deck2, deck1);
+
+        diviserTasCouleur(deck2, deck1, deck3, CardColor.Treffle);
+
+        ViderCouleur(deck1, deck2, CardColor.Treffle);
+    }
+
 
 
     private void Start()
@@ -475,7 +614,7 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        exercice19();
+        exercice22();
 
         // **********************************************
         // **********************************************
