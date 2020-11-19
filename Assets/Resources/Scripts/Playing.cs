@@ -58,6 +58,24 @@ public class Playing : MonoBehaviour
         }
     }
 
+    public void TrouverPlusGrand(Deck deckDepart, Deck DeckPlusGrand, Deck deckReste, CardColor color)
+    {
+        gm.MoveTopCard(deckDepart, DeckPlusGrand);
+
+        while (DeckIsNotEmpty(deckDepart) && gm.topCardColor(deckDepart) == color)
+        {
+            if (gm.Superior(deckDepart, DeckPlusGrand))
+            {
+                gm.MoveTopCard(DeckPlusGrand, deckReste);
+                gm.MoveTopCard(deckDepart, DeckPlusGrand);
+            }
+            else
+            {
+                gm.MoveTopCard(deckDepart, deckReste);
+            }
+        }
+    }
+
     private void diviserTasCouleur(Deck deckDepart, Deck DeckDarriver1, Deck DeckDarriver2, CardColor color)
     {
         while (DeckIsNotEmpty(deckDepart) && gm.topCardColor(deckDepart) == color)
@@ -476,6 +494,19 @@ public class Playing : MonoBehaviour
     }
 
 
+    private void TrierCroissantDeck(Deck deckDepart, Deck Transition1, Deck Transition2 , CardColor color)
+    {
+        while (DeckIsNotEmpty(deckDepart) && gm.topCardColor(deckDepart) == color )
+        {
+            TrouverPlusGrand(deckDepart, Transition1, Transition2, color);
+            if (DeckIsNotEmpty(Transition2) && gm.topCardColor(Transition2) == color)
+            {
+                TrouverPlusGrand(Transition2, Transition1, deckDepart, color);
+            }
+        }
+        ViderCouleur(Transition1, deckDepart, color);
+    }
+
     private void exercice20()
     {
         gm.InitDeck(deck1, "[TTTT]");
@@ -583,8 +614,6 @@ public class Playing : MonoBehaviour
         }
     }
 
-
-
     private void exercice22()
     {
         gm.InitDeck(deck1, "K[TTTT]");
@@ -605,6 +634,18 @@ public class Playing : MonoBehaviour
     }
 
 
+    private void exercice23()
+    {
+        gm.InitDeck(deck1, "[T]");
+        gm.InitDeck(deck2, "[K]");
+        gm.InitDeck(deck3, "[C]");
+        gm.InitDeck(deck4, "[P]");
+
+        TrierCroissantDeck(deck1, deck2, deck3, CardColor.Treffle);
+        TrierCroissantDeck(deck2, deck4, deck3, CardColor.Karreau);
+        TrierCroissantDeck(deck3, deck2, deck1, CardColor.Coeur);
+        TrierCroissantDeck(deck4, deck2, deck3, CardColor.Pique);
+    }
 
     private void Start()
     {
@@ -614,7 +655,7 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        exercice22();
+        exercice23();
 
         // **********************************************
         // **********************************************
