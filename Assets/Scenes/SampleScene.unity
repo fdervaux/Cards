@@ -275,6 +275,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e15990d89eea1944dadbfc4e2f5c13e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &740848595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740848597}
+  - component: {fileID: 740848596}
+  m_Layer: 0
+  m_Name: CoursGameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &740848596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740848595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613833c4353a3ab4f8c132e273ca0d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &740848597
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740848595}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &803041187 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3899009932371499423, guid: 7fe15ef8f8da497429e6940ae8797296, type: 3}
@@ -817,7 +860,7 @@ MonoBehaviour:
   - {fileID: 1093974468}
   _discardDeck: {fileID: 583170117}
   _dealDeck: {fileID: 1472531779}
-  _animationDuration: 0.5
+  _animationDuration: 0.1
   _animationCurve:
     serializedVersion: 2
     m_Curve:
