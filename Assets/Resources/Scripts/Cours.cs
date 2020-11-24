@@ -171,7 +171,8 @@ public class Cours : MonoBehaviour
             stringToPrint += array[i] + ",";
         }
 
-        stringToPrint += array[array.Length - 1];
+        if(array.Length > 0)
+            stringToPrint += array[array.Length - 1];
 
         Debug.Log(stringToPrint);
     }
@@ -223,7 +224,15 @@ public class Cours : MonoBehaviour
     // si non -> false
     private bool contains(int[] array, int value)
     {
-        return false;
+        bool isContained = false;
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            if(array[i] == value)
+                isContained = true;
+        }
+
+        return isContained;
     }
 
     // l'indice du dernier element du tableau
@@ -232,7 +241,15 @@ public class Cours : MonoBehaviour
     // sinon -1
     private int lastOccurenceIndice(int[] array, int value)
     {
-        return -1;
+        int occurence = -1;
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] == value)
+                occurence = i;
+        }
+
+        return occurence;
     }
 
     // l'indice du dernier element du tableau
@@ -241,21 +258,80 @@ public class Cours : MonoBehaviour
     // sinon -1
     private int firstOccurenceIndice(int[] array, int value)
     {
-        return -1;
+        int occurence = -1;
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] == value)
+            {
+                occurence = i;
+                break;
+            }
+                
+        }
+
+        return occurence;
     }
 
     // l'indice du dernier element du tableau
     // le nombre d'ocurrence de value dans le tableau.
     private int numberOfOccurence(int[] array, int value)
     {
-        return 0;
+
+        int numberOfOccurence = 0;
+
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] == value)
+                numberOfOccurence++;
+        }
+
+        return numberOfOccurence;
     }
 
     // renvoie le tableau d'indice de toute les occurences 
     private int[] arrayOfOccurenceIndice(int[] array, int value)
     {
-        return new int[0];
+        int length = numberOfOccurence(array, value); // parcour tout mon tableau
+        int[] tableauIndice = new int[length];
+
+        int cpt = 0;
+
+        for (int i = 0; i < array.Length; i++) // pacour tout mon tableau
+        {
+            if (array[i] == value)
+            {
+                tableauIndice[cpt] = i;
+                cpt++;
+            }
+                
+        }
+
+        return tableauIndice;
     }
+
+
+
+    private int[] arrayOfOccurenceIndiceOneLoop(int[] array, int value)
+    {
+        int[] tableauIndice = new int[0];
+
+        int cpt = 0;
+
+        for (int i = 0; i < array.Length; i++) // pacour tout mon tableau
+        {
+            if (array[i] == value)
+            {
+                tableauIndice[cpt] = i;
+                cpt++;
+            }
+
+        }
+
+        return tableauIndice;
+    }
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -285,9 +361,15 @@ public class Cours : MonoBehaviour
             //Debug.Log("Fr(" + i + ") = " + FibonnacciR(i));
         }
 
-        int[] notes = generateRandomArray(9, 0, 20);
+        int[] notes = generateRandomArray(30, 0, 20);
         printArray(notes);
         Debug.Log("maxValue : " + maxValueInArray(notes));
+
+        Debug.Log("contains value :" + contains(notes, 10));
+
+        int[] indices = arrayOfOccurenceIndice(notes, 10);
+
+        printArray(indices);
 
         int res = Random.Range(0, 10);
 
