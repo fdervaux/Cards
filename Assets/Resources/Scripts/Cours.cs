@@ -218,6 +218,45 @@ public class Cours : MonoBehaviour
     }
 
 
+    // est-ce que le tableaux contient la valeur "value" 
+    // si oui -> true
+    // si non -> false
+    private bool contains(int[] array, int value)
+    {
+        return false;
+    }
+
+    // l'indice du dernier element du tableau
+    // si le tableaux contient value 
+    //   -> l'indice de la dernière occurence de value
+    // sinon -1
+    private int lastOccurenceIndice(int[] array, int value)
+    {
+        return -1;
+    }
+
+    // l'indice du dernier element du tableau
+    // si le tableaux contient value 
+    //   -> l'indice de la première occurence de value
+    // sinon -1
+    private int firstOccurenceIndice(int[] array, int value)
+    {
+        return -1;
+    }
+
+    // l'indice du dernier element du tableau
+    // le nombre d'ocurrence de value dans le tableau.
+    private int numberOfOccurence(int[] array, int value)
+    {
+        return 0;
+    }
+
+    // renvoie le tableau d'indice de toute les occurences 
+    private int[] arrayOfOccurenceIndice(int[] array, int value)
+    {
+        return new int[0];
+    }
+
     // Start is called before the first frame update
     void Start()
     {
