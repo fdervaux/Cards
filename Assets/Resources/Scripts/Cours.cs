@@ -164,10 +164,16 @@ public class Cours : MonoBehaviour
 
     public void printArray(int[] array)
     {
-        for (int i = 0; i < array.Length; i++)
+        string stringToPrint = "";
+
+        for (int i = 0; i < array.Length - 1; i++)
         {
-            Debug.Log(array[i]);
+            stringToPrint += array[i] + ",";
         }
+
+        stringToPrint += array[array.Length - 1];
+
+        Debug.Log(stringToPrint);
     }
 
 
@@ -184,6 +190,33 @@ public class Cours : MonoBehaviour
 
         return array;
     }
+
+    private int maxValueInArray(int[] array)
+    {
+        int noteMax = array[0];
+
+        for (int i = 1; i < array.Length; i++)
+        {
+            if( array[i] > noteMax)
+                noteMax = array[i];
+        }
+
+        return noteMax; 
+    }
+
+    private int minValueInArray(int[] array)
+    {
+        int noteMin = array[0];
+
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array[i] < noteMin)
+                noteMin = array[i];
+        }
+
+        return noteMin;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -215,6 +248,7 @@ public class Cours : MonoBehaviour
 
         int[] notes = generateRandomArray(9, 0, 20);
         printArray(notes);
+        Debug.Log("maxValue : " + maxValueInArray(notes));
 
         int res = Random.Range(0, 10);
 
