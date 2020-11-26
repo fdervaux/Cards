@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Cours : MonoBehaviour
 {
@@ -177,6 +178,21 @@ public class Cours : MonoBehaviour
         Debug.Log(stringToPrint);
     }
 
+    public void printList(List<int> list)
+    {
+        string stringToPrint = "";
+
+        for (int i = 0; i < list.Count - 1; i++)
+        {
+            stringToPrint += list[i] + ",";
+        }
+
+        if (list.Count > 0)
+            stringToPrint += list[list.Count - 1];
+
+        Debug.Log(stringToPrint);
+    }
+
 
     private int[] generateRandomArray(int length, int min, int max)
     {
@@ -186,7 +202,7 @@ public class Cours : MonoBehaviour
         //2 on met des valeurs random
         for (int i = 0; i < length; i++)
         {
-            array[i] = Random.Range(min, max);
+            array[i] = UnityEngine.Random.Range(min, max);
         }
 
         return array;
@@ -316,21 +332,40 @@ public class Cours : MonoBehaviour
     {
         int[] tableauIndice = new int[0];
 
-        int cpt = 0;
+        int OccurenceIndice = 0;
 
         for (int i = 0; i < array.Length; i++) // pacour tout mon tableau
         {
+            
             if (array[i] == value)
             {
-                tableauIndice[cpt] = i;
-                cpt++;
+                Array.Resize(ref tableauIndice, tableauIndice.Length + 1);
+                tableauIndice[OccurenceIndice] = i;
+                OccurenceIndice++;
             }
 
         }
 
         return tableauIndice;
     }
-    
+
+
+
+    private List<int> arrayOfOccurenceIndiceWithList(int[] array, int value)
+    {
+        List<int> listeIndice = new List<int>();
+
+        for (int i = 0; i < array.Length; i++) // pacour tout mon tableau
+        {
+            if (array[i] == value)
+            {
+                listeIndice.Add(i);
+            }
+        }
+
+        return listeIndice;
+    }
+
 
 
     // Start is called before the first frame update
@@ -367,11 +402,11 @@ public class Cours : MonoBehaviour
 
         Debug.Log("contains value :" + contains(notes, 10));
 
-        int[] indices = arrayOfOccurenceIndice(notes, 10);
+        List<int> indices = arrayOfOccurenceIndiceWithList(notes, 10);
 
-        printArray(indices);
+        printList(indices);
 
-        int res = Random.Range(0, 10);
+        int res = UnityEngine.Random.Range(0, 10);
 
 
     }
