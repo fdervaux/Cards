@@ -29,8 +29,6 @@ public class Motor
         Debug.Log("moteur " + ToString() + " is Destroy");
     }
 }
-
-
 public class Voiture
 {
     private string _modele = "default";
@@ -76,6 +74,17 @@ public class Voiture
 
 
 
+
+// Un chronometre
+// reset
+// play
+// stop
+// update( float Time ); //s 
+// getTime
+
+
+
+
 public class ClassExample : MonoBehaviour
 {
     private Motor _motor = null;
@@ -83,7 +92,7 @@ public class ClassExample : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Voiture maVoiture = new Voiture( "Clio3" , "Renault", Motor.MotorType.Diesel, 60);
+        /*Voiture maVoiture = new Voiture( "Clio3" , "Renault", Motor.MotorType.Diesel, 60);
 
         _motor = new Motor(Motor.MotorType.Essence, 120);
         Voiture maVoiture2 = new Voiture("multiPlat", "Fiat", _motor);
@@ -91,13 +100,13 @@ public class ClassExample : MonoBehaviour
         //maVoiture.modele = "Clio3";
 
         Debug.Log(maVoiture.ToString());
-        Debug.Log(maVoiture2.ToString());
+        Debug.Log(maVoiture2.ToString());*/
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //Time.deltaTime;
     }
 }
