@@ -39,6 +39,7 @@
   - [Exercice C-3](#exercice-c-3)
   - [Exercice C-4](#exercice-c-4)
   - [Exercice C-5](#exercice-c-5)
+- [Classe et Objet](#classe-et-objet)
 
 # Exercice Carte Basic
 
@@ -551,3 +552,19 @@ Ecrire und fonction qui affiche
 - Qui affihce la médiane des notes
 
 __Pour calculer la médiane__ : On classe les valeurs de la série statistique dans l'ordre croissant : Si le nombre de valeurs est impair, la médiane est la valeur du milieu. S'il est pair, la médiane est la demi-somme des deux valeurs du milieu.
+
+
+# Classe et Objet
+
+Ecrire une class ```Vector2D```
+Un Vecteur est un objet ayant une coordonée x et une coordonée y
+
+- Ecrire le contructeur qui prend en paramètre les coordonées du point
+- Ecrire des ```setter``` et des ```getter``` pour les coordonées du Vecteur
+- Ecrire une fonction ```Add``` qui prend un autre Vecteur en paramètre et qui ajoute au Vecteur actuelle l'autre Vecteur.
+- Ecrire une fonction ```magnitude``` qui renvoie la norme du vecteur: 
+  
+  ```norme = √(x² + y²) ```
+
+
+
