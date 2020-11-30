@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class Chronometer : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class Chronometer : MonoBehaviour
     // pause()
     // updateTime(deltaTime) //s 
     // float getTime()
+
+    [SerializeField]
+    private Text chronoText; 
 
     private float _time = 0;
 
@@ -45,9 +49,9 @@ public class Chronometer : MonoBehaviour
             _time += deltaTime;
     }
 
-    public float getTime()
+    public string getTime()
     {
-        return _time;
+        return _time.ToString("#00.00");
     }
 
     // Update is called once per frame
@@ -55,5 +59,7 @@ public class Chronometer : MonoBehaviour
     {
         updateTime(Time.deltaTime);
         Debug.Log(getTime());
+
+        chronoText.text = getTime();
     }
 }
