@@ -7,32 +7,53 @@ public class Chronometer : MonoBehaviour
 {
 
     // Un chronometre
-    // reset()
+    // resume()
     // play()
-    // stop()
+    // pause()
     // updateTime(deltaTime) //s 
     // float getTime()
 
-    [SerializeField]
-    private int monInt = 12;
+    private float _time = 0;
 
-    [NonSerialized]
-    public int monInt2 = 24;
+    [SerializeField]
+    private bool _isInPlayMode = false;
+
+    public void play()
+    {
+        _isInPlayMode = true;
+    }
+
+    public void pause()
+    {
+        _isInPlayMode = false;
+    }
+
+    public void resume()
+    {
+        _time = 0;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        play();
     }
 
     public void updateTime(float deltaTime)
     {
+        if(_isInPlayMode)
+            _time += deltaTime;
+    }
 
+    public float getTime()
+    {
+        return _time;
     }
 
     // Update is called once per frame
     void Update()
     {
         updateTime(Time.deltaTime);
+        Debug.Log(getTime());
     }
 }
