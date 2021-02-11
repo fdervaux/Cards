@@ -154,12 +154,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _quizzData:
     _questions:
-    - questionText: Est-ce que le ciel est bleu ?
-      answer: 1
-    - questionText: La vie est courte ?
-      answer: 1
-    - questionText: La Programmation c'est nulle ?
+    - questionText: 
       answer: 0
+    - questionText: 
+      answer: 0
+    - questionText: 
+      answer: 0
+  _questionnaire: {fileID: 1673328930}
+  _goodAnswer: {fileID: 1357323030}
+  _wrongAnswer: {fileID: 712057625}
+  _scoreText: {fileID: 1093058573}
+  _questionText: {fileID: 742662084}
+  _animationDuration: 1
+  _animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _objectToAnim: {fileID: 2114648015}
 --- !u!4 &14748193
 Transform:
   m_ObjectHideFlags: 0
@@ -255,7 +286,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 138082638}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 14748192}
+        m_TargetAssemblyTypeName: QuizzController, Assembly-CSharp
+        m_MethodName: onClickNo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &138082638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,7 +578,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 554129398}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 14748192}
+        m_TargetAssemblyTypeName: QuizzController, Assembly-CSharp
+        m_MethodName: onClickNextQuestion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &554129398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,7 +826,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 894439015}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 14748192}
+        m_TargetAssemblyTypeName: QuizzController, Assembly-CSharp
+        m_MethodName: changeScreenToResultInt
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &894439015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,7 +1493,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1673328931
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1530,7 +1597,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1890960222}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 14748192}
+        m_TargetAssemblyTypeName: QuizzController, Assembly-CSharp
+        m_MethodName: onClickYes
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1890960222
 MonoBehaviour:
   m_ObjectHideFlags: 0

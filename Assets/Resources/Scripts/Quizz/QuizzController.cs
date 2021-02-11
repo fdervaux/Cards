@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class QuizzController : MonoBehaviour
 {
+    
     [SerializeField] private QuizzData _quizzData;
 
     [SerializeField] private GameObject _questionnaire;
@@ -13,6 +15,13 @@ public class QuizzController : MonoBehaviour
 
     [SerializeField] private Text _scoreText;
     [SerializeField] private Text _questionText;
+
+
+    [SerializeField] private float _animationDuration;
+    private float _startAnimationTime;
+    [SerializeField] private AnimationCurve _animationCurve;
+
+    [SerializeField] private RectTransform _objectToAnim;
 
 
     public void onClickYes()
@@ -41,6 +50,8 @@ public class QuizzController : MonoBehaviour
         else
         {
             _wrongAnswer.SetActive(true);
+
+            StartCoroutine(PlayAnimation( _animationDuration, _animationCurve, _objectToAnim));
         }
     }
 
@@ -75,5 +86,35 @@ public class QuizzController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public IEnumerator PlayAnimation(float duration, AnimationCurve animationCurve, RectTransform rectTransform )
+    {
+        _startAnimationTime = Time.time;
+
+        float currentTime = Time.time;
+        Vector3 startLocalScale = rectTransform.localScale;
+        Vector3 startRotation = rectTransform.rotation.eulerAngles;
+
+
+        while(_startAnimationTime + duration > currentTime)
+        {
+            currentTime = Time.time;
+
+            float normalizeTime = (currentTime - _startAnimationTime) / duration;
+
+            float factor = animationCurve.Evaluate(normalizeTime);
+
+            rectTransform.localScale = startLocalScale * factor;
+            
+            rectTransform.rotation = Quaternion.Euler(startRotation + new Vector3(0, 0, factor * 180));
+
+            yield return null;
+        }
+
+        rectTransform.localScale = startLocalScale;
+        rectTransform.rotation = Quaternion.Euler(startRotation);
+
+        yield return null;
     }
 }
