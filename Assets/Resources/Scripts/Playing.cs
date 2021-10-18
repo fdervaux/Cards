@@ -219,20 +219,14 @@ public class Playing : MonoBehaviour
         {
             gm.MoveTopCard(deck1, deck3);
 
-            if (gm.topCardColor(deck1) == CardColor.Pique || gm.topCardColor(deck1) == CardColor.Treffle)
-            {
-                gm.MoveTopCard(deck1, deck2);
-            }
+            MovePOrTfromDeck1toDeck2();
             gm.MoveTopCard(deck2, deck1);
 
         }
         else
         {
             gm.MoveTopCard(deck1, deck2);
-            if (gm.topCardColor(deck1) == CardColor.Pique || gm.topCardColor(deck1) == CardColor.Treffle)
-            {
-                gm.MoveTopCard(deck1, deck2);
-            }
+            MovePOrTfromDeck1toDeck2();
         }
     }
 
