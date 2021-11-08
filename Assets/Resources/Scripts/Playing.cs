@@ -85,7 +85,7 @@ public class Playing : MonoBehaviour
     {
         gm.InitDeck(deck1, "T+P");
 
-        if(gm.topCardColor(deck1) == CardColor.Treffle)
+        if (gm.topCardColor(deck1) == CardColor.Treffle)
         {
             gm.MoveTopCard(deck1, deck2);
         }
@@ -231,12 +231,11 @@ public class Playing : MonoBehaviour
     }
 
 
-
     //Version de l'exercice 9 sans utiliser le else (version pour ceux qui sont curieux)
     //C'est un exercice compliqué. Les versions basique ou un peu factorisé sont déjà très bien ;) 
-    private void MoveCardOnGoodDeckWithCondition(bool condition,Deck from, Deck firstTo, Deck secondTo)
+    private void MoveCardOnGoodDeckWithCondition(bool condition, Deck from, Deck firstTo, Deck secondTo)
     {
-        if(condition)
+        if (condition)
         {
             gm.MoveTopCard(from, firstTo);
             return;
@@ -277,13 +276,273 @@ public class Playing : MonoBehaviour
 
     }
 
+    private void exerciceA10()
+    {
+        gm.InitDeck(deck1, "[T]");
+
+        //Première version sans utiliser de fonction
+        /*while(!gm.DeckIsEmpty(deck1))
+        {
+            gm.MoveTopCard(deck1,deck2);
+        }*/
+
+
+        //Utilisation de la fonction vider tas
+        viderDeck(deck1, deck2);
+    }
+
+    private void viderDeck(Deck from, Deck to)
+    {
+        while (!gm.DeckIsEmpty(from))
+        {
+            gm.MoveTopCard(from, to);
+        }
+    }
+
+    private void exerciceA11()
+    {
+        gm.InitDeck(deck1, "[K+C][T+P]");
+
+        while (!gm.DeckIsEmpty(deck1) && (gm.topCardColor(deck1) == CardColor.Treffle || gm.topCardColor(deck1) == CardColor.Pique))
+        {
+            gm.MoveTopCard(deck1, deck2);
+        }
+
+        viderDeck(deck1, deck3);
+        viderDeck(deck2, deck1);
+        viderDeck(deck3, deck1);
+    }
+
+    private void exercice11Simple()
+    {
+        gm.InitDeck(deck1, "[K][T]");
+
+        while (!gm.DeckIsEmpty(deck1) && gm.topCardColor(deck1) == CardColor.Treffle)
+        {
+            gm.MoveTopCard(deck1, deck2);
+        }
+
+        viderDeck(deck1, deck3);
+        viderDeck(deck2, deck1);
+        viderDeck(deck3, deck1);
+
+        //Ancienne version sans fonction
+        /*while(!gm.DeckIsEmpty(deck1))
+        {
+            gm.MoveTopCard(deck1,deck3);
+        }
+        while(!gm.DeckIsEmpty(deck2))
+        {
+            gm.MoveTopCard(deck2,deck1);
+        }
+        while(!gm.DeckIsEmpty(deck3))
+        {
+            gm.MoveTopCard(deck3,deck1);
+        }*/
+    }
+
+    private void exerciceA12()
+    {
+        gm.InitDeck(deck1, "[K]");
+        gm.InitDeck(deck2, "[T]");
+
+        while (!gm.DeckIsEmpty(deck1) && !gm.DeckIsEmpty(deck2))
+        {
+            gm.MoveTopCard(deck1, deck3);
+            gm.MoveTopCard(deck2, deck3);
+        }
+    }
+
+    private void moveCardSafe(Deck from, Deck to)
+    {
+        if (!gm.DeckIsEmpty(from))
+        {
+            gm.MoveTopCard(from, to);
+        }
+    }
+
+    private void exerciceA13()
+    {
+        gm.InitDeck(deck1, "[T]");
+
+        while (!gm.DeckIsEmpty(deck1))
+        {
+            gm.MoveTopCard(deck1, deck2);
+
+            moveCardSafe(deck1, deck3);
+        }
+    }
+
+    private void viderCouleur(Deck deckFrom, Deck deckTo, CardColor color)
+    {
+        while (!gm.DeckIsEmpty(deckFrom) && gm.topCardColor(deckFrom) == color)
+        {
+            gm.MoveTopCard(deckFrom, deckTo);
+        }
+    }
+
+
+    private void exerciceA14()
+    {
+        gm.InitDeck(deck1, "[T]");
+        gm.InitDeck(deck2, "[K]");
+        gm.InitDeck(deck3, "[P]");
+
+
+        viderDeck(deck3, deck4);
+        viderDeck(deck2, deck3);
+        viderDeck(deck1, deck2);
+
+        //Ancienne version sans fonction
+        /*while(!gm.DeckIsEmpty(deck3))
+        {
+            gm.MoveTopCard(deck3,deck4);
+        }
+
+        while(!gm.DeckIsEmpty(deck2))
+        {
+            gm.MoveTopCard(deck2,deck3);
+        }
+
+        while(!gm.DeckIsEmpty(deck1))
+        {
+            gm.MoveTopCard(deck1,deck2);
+        }*/
+    }
+
+    private void exerciceA15()
+    {
+        gm.InitDeck(deck1, "[T]");
+        gm.InitDeck(deck2, "[K]");
+        gm.InitDeck(deck3, "[C]");
+        gm.InitDeck(deck4, "[P]");
+
+        viderDeck(deck2, deck3);
+        viderDeck(deck1, deck2);
+        viderDeck(deck4, deck1);
+        viderCouleur(deck3, deck2, CardColor.Karreau);
+        viderDeck(deck3, deck4);
+        viderCouleur(deck2, deck3, CardColor.Karreau);
+
+    }
+
+    private void exerciceA16()
+    {
+        gm.InitDeck(deck1, "[T][K][C][P]");
+
+        viderCouleur(deck1, deck2, CardColor.Pique);
+        viderCouleur(deck1, deck3, CardColor.Coeur);
+        viderCouleur(deck1, deck4, CardColor.Karreau);
+
+        viderDeck(deck1, deck2);
+
+        viderDeck(deck4, deck1);
+        viderDeck(deck3, deck1);
+
+        viderCouleur(deck2, deck3, CardColor.Treffle);
+
+        viderDeck(deck2, deck1);
+        viderDeck(deck3, deck1);
+
+        // version très simple de l'exercice ;)
+        //viderDeck( deck1, deck2);
+        //viderDeck( deck2, deck3);
+        //viderDeck( deck3, deck1);
+    }
+
+    private void moveIfNotEmpty(Deck deckFrom, Deck deckTo)
+    {
+        if (!gm.DeckIsEmpty(deckFrom))
+        {
+            gm.MoveTopCard(deckFrom, deckTo);
+        }
+    }
+
+    private void exerciceA17()
+    {
+        gm.InitDeck(deck1, "[T]");
+        gm.InitDeck(deck2, "[K]");
+        gm.InitDeck(deck3, "[P]");
+
+
+        while (!gm.DeckIsEmpty(deck1) || !gm.DeckIsEmpty(deck2) || !gm.DeckIsEmpty(deck3))
+        {
+            moveIfNotEmpty(deck1, deck4);
+            moveIfNotEmpty(deck2, deck4);
+            moveIfNotEmpty(deck3, deck4);
+        }
+
+    }
+
+    private void exerciceA18()
+    {
+        gm.InitDeck(deck1, "TTKKCCPPCCPPKKTT");
+
+        while (!gm.DeckIsEmpty(deck1))
+        {
+            if (gm.topCardColor(deck1) == CardColor.Karreau)
+            {
+                viderCouleur(deck1, deck2, CardColor.Karreau);
+            }
+            else if (gm.topCardColor(deck1) == CardColor.Coeur)
+            {
+                gm.MoveTopCard(deck1, deck3);
+            }
+            else if (gm.topCardColor(deck1) == CardColor.Treffle)
+            {
+                gm.MoveTopCard(deck1, deck4);
+            }
+            else if (gm.topCardColor(deck1) == CardColor.Pique)
+            {
+                viderCouleur(deck4, deck3, CardColor.Treffle);
+                gm.MoveTopCard(deck1, deck4);
+                viderCouleur(deck3, deck4, CardColor.Treffle);
+            }
+        }
+
+        viderCouleur(deck4, deck1, CardColor.Treffle);
+    }
+
+    //version optimale de l'exercice 18
+    private void exerciceA18Optimal()
+    {
+        gm.InitDeck(deck1, "TTKKCCPPCCPPKKTT");
+
+        while (!gm.DeckIsEmpty(deck1))
+        {
+            // il faut vérifier si c'est un pique pour déplacer les cartes treffles avant. 
+            if (gm.topCardColor(deck1) == CardColor.Pique)
+            {
+                viderCouleur(deck4, deck3, CardColor.Treffle);
+                viderCouleur(deck1, deck4, CardColor.Pique);
+                viderCouleur(deck3, deck4, CardColor.Treffle);
+            }
+            else
+            {
+                // pas besoin de verifier s'il y a une carte ou si c'est un carreau, la fonction viderColuleur le fait déjà et ne fait rien sinon
+                viderCouleur(deck1, deck2, CardColor.Karreau);
+
+                // pas besoin de verifier s'il y a une carte ou si c'est un Coeur, la fonction viderColuleur le fait déjà et ne fait rien sinon
+                viderCouleur(deck1, deck3, CardColor.Coeur);
+
+                // pas besoin de verifier s'il y a une carte ou si c'est un Treffle, la fonction viderColuleur le fait déjà et ne fait rien sinon
+                viderCouleur(deck1, deck4, CardColor.Treffle);
+            }
+        }
+
+        viderCouleur(deck4, deck1, CardColor.Treffle);
+    }
+
+
+
 
 
 
 
     // fonction start (on cherche à garder cette fonction la plus simple possible, 
     // ici simplement un appel à la fonction correspondant à l'exercice en cours)
-    private void Start() {
+    private void Start()
+    {
 
         gm = GameManager.Instance();
 
@@ -291,7 +550,7 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        exerciceA9Ter();
+        exerciceA18Optimal();
 
         // **********************************************
         // **********************************************
