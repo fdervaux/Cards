@@ -540,9 +540,9 @@ public class Playing : MonoBehaviour
 
         gm.MoveTopCard(deck1, deck2);
 
-        while(!gm.DeckIsEmpty(deck1))
+        while (!gm.DeckIsEmpty(deck1))
         {
-            if(gm.Superior(deck1, deck2))
+            if (gm.Superior(deck1, deck2))
             {
                 gm.MoveTopCard(deck1, deck3);
             }
@@ -559,9 +559,9 @@ public class Playing : MonoBehaviour
     {
         gm.InitDeck(deck1, "[T]");
 
-        while(! gm.DeckIsEmpty(deck1))
+        while (!gm.DeckIsEmpty(deck1))
         {
-            while (!gm.DeckIsEmpty(deck2) && !gm.Superior(deck1,deck2) )
+            while (!gm.DeckIsEmpty(deck2) && !gm.Superior(deck1, deck2))
             {
                 gm.MoveTopCard(deck2, deck3);
             }
@@ -574,9 +574,9 @@ public class Playing : MonoBehaviour
     {
         gm.InitDeck(deck1, "TKKTTKK");
 
-        while(!gm.DeckIsEmpty(deck1))
+        while (!gm.DeckIsEmpty(deck1))
         {
-            if(gm.topCardColor(deck1) == CardColor.Treffle )
+            if (gm.topCardColor(deck1) == CardColor.Treffle)
             {
                 gm.MoveTopCard(deck1, deck2);
             }
@@ -587,13 +587,13 @@ public class Playing : MonoBehaviour
         }
 
 
-        while(!gm.DeckIsEmpty(deck2) && !gm.DeckIsEmpty(deck3))
+        while (!gm.DeckIsEmpty(deck2) && !gm.DeckIsEmpty(deck3))
         {
             gm.MoveTopCard(deck2, deck4);
             gm.MoveTopCard(deck3, deck1);
         }
 
-        if(gm.DeckIsEmpty(deck2))
+        if (gm.DeckIsEmpty(deck2))
         {
             viderDeck(deck3, deck1);
             viderDeck(deck4, deck1);
@@ -629,7 +629,7 @@ public class Playing : MonoBehaviour
             }
         }
 
-        if( cptTreffle > cptKarreau)
+        if (cptTreffle > cptKarreau)
         {
             viderDeck(deck2, deck1);
             viderDeck(deck3, deck1);
@@ -672,10 +672,58 @@ public class Playing : MonoBehaviour
     }
 
 
+    private void exerciceA22bis()
+    {
+        gm.InitDeck(deck1, "KTTTTTTTTT");
 
-    
+        int cptTreffle = 0;
 
-    
+        while (gm.topCardColor(deck1) == CardColor.Treffle)
+        {
+            gm.MoveTopCard(deck1, deck2);
+            cptTreffle++;
+        }
+
+        // division entière
+        //int d = cptTreffle / 4; // 1
+
+        
+
+        int[] cptDecks = new int[4];
+
+        for (int i = 0; i < cptTreffle; i++)
+        {
+            cptDecks[i % 4]++;
+        }
+
+        
+
+        while (cptDecks[0] > 0)
+        {
+            gm.MoveTopCard(deck2, deck1);
+            cptDecks[0]--;
+        }
+
+        while (cptDecks[2] > 0)
+        {
+            gm.MoveTopCard(deck2, deck3);
+            cptDecks[2]--;
+        }
+
+        while (cptDecks[3] > 0)
+        {
+            gm.MoveTopCard(deck2, deck4);
+            cptDecks[3]--;
+        }
+
+
+
+
+    }
+
+
+
+
 
 
 
@@ -694,9 +742,9 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        exerciceA22();
-        
-        
+        exerciceA22bis();
+
+
 
         // **********************************************
         // **********************************************
