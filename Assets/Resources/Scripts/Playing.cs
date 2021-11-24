@@ -536,7 +536,22 @@ public class Playing : MonoBehaviour
 
     private void exerciceA19()
     {
+        gm.InitDeck(deck1, "T[T]");
 
+        gm.MoveTopCard(deck1, deck2);
+
+        while(!gm.DeckIsEmpty(deck1))
+        {
+            if(gm.Superior(deck1, deck2))
+            {
+                gm.MoveTopCard(deck1, deck3);
+            }
+            else
+            {
+                gm.MoveTopCard(deck2, deck3);
+                gm.MoveTopCard(deck1, deck2);
+            }
+        }
     }
 
 
@@ -564,7 +579,7 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        //exerciceA18Optimal();
+        exerciceA19();
         
         
 
