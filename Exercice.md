@@ -383,7 +383,7 @@ __Situation initiale :__
 __Situation finale :__
 
 - Deck 1 : `""`
-- Deck 2 : `"[T]↑
+- Deck 2 : `"[T]↑`
 - Deck 3 : `""`
 - Deck 4 : `""`
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Playing : MonoBehaviour
 {
@@ -409,7 +410,6 @@ public class Playing : MonoBehaviour
             gm.MoveTopCard(deck1,deck2);
         }*/
     }
-
     private void exerciceA15()
     {
         gm.InitDeck(deck1, "[T]");
@@ -534,6 +534,20 @@ public class Playing : MonoBehaviour
     }
 
 
+    private void exerciceA19()
+    {
+
+    }
+
+
+
+
+
+    
+
+    
+
+
 
 
 
@@ -550,7 +564,9 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        exerciceA18Optimal();
+        //exerciceA18Optimal();
+        
+        
 
         // **********************************************
         // **********************************************
