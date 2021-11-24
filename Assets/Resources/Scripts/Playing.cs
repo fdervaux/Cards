@@ -570,6 +570,107 @@ public class Playing : MonoBehaviour
         }
     }
 
+    private void exerciceA21()
+    {
+        gm.InitDeck(deck1, "TKKTTKK");
+
+        while(!gm.DeckIsEmpty(deck1))
+        {
+            if(gm.topCardColor(deck1) == CardColor.Treffle )
+            {
+                gm.MoveTopCard(deck1, deck2);
+            }
+            else if (gm.topCardColor(deck1) == CardColor.Karreau)
+            {
+                gm.MoveTopCard(deck1, deck3);
+            }
+        }
+
+
+        while(!gm.DeckIsEmpty(deck2) && !gm.DeckIsEmpty(deck3))
+        {
+            gm.MoveTopCard(deck2, deck4);
+            gm.MoveTopCard(deck3, deck1);
+        }
+
+        if(gm.DeckIsEmpty(deck2))
+        {
+            viderDeck(deck3, deck1);
+            viderDeck(deck4, deck1);
+        }
+        else
+        {
+            viderDeck(deck1, deck3);
+            viderDeck(deck2, deck1);
+            viderDeck(deck4, deck1);
+            viderDeck(deck3, deck1);
+        }
+
+    }
+
+    private void exerciceA21WithCpt()
+    {
+        gm.InitDeck(deck1, "TKKTT");
+
+        int cptTreffle = 0;
+        int cptKarreau = 0;
+
+        while (!gm.DeckIsEmpty(deck1))
+        {
+            if (gm.topCardColor(deck1) == CardColor.Treffle)
+            {
+                gm.MoveTopCard(deck1, deck2);
+                cptTreffle++;
+            }
+            else if (gm.topCardColor(deck1) == CardColor.Karreau)
+            {
+                gm.MoveTopCard(deck1, deck3);
+                cptKarreau++;
+            }
+        }
+
+        if( cptTreffle > cptKarreau)
+        {
+            viderDeck(deck2, deck1);
+            viderDeck(deck3, deck1);
+        }
+        else
+        {
+            viderDeck(deck3, deck1);
+            viderDeck(deck2, deck1);
+        }
+    }
+
+    private void SplitTreffle(Deck from, Deck to1, Deck to2)
+    {
+        while (!gm.DeckIsEmpty(from) && gm.topCardColor(from) == CardColor.Treffle)
+        {
+            gm.MoveTopCard(from, to1);
+            if (!gm.DeckIsEmpty(from) && gm.topCardColor(from) == CardColor.Treffle)
+            {
+                gm.MoveTopCard(from, to2);
+            }
+        }
+    }
+
+
+    private void exerciceA22()
+    {
+        gm.InitDeck(deck1, "KTTTTTTTTT");
+
+        SplitTreffle(deck1, deck2, deck3);
+
+        gm.MoveTopCard(deck1, deck3);
+
+        SplitTreffle(deck2, deck1, deck4);
+
+        gm.MoveTopCard(deck3, deck1);
+
+        SplitTreffle(deck3, deck1, deck2);
+
+        viderCouleur(deck1, deck3, CardColor.Treffle);
+    }
+
 
 
     
@@ -593,7 +694,7 @@ public class Playing : MonoBehaviour
         // *********** !!! Your code here !!! ***********
         // **********************************************
 
-        exerciceA20();
+        exerciceA22();
         
         
 
